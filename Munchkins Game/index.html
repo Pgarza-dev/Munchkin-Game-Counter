@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous"
+    />
+    <!-- Goofle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins&display=swap"
+    rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+    src="https://kit.fontawesome.com/a6b44b4960.js"
+    crossorigin="anonymous"
+    >
+    </script>
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-light pt-5 container-lg" style="font-family: Poppins">
+    <header>
+        <nav
+            class="navbar navbar-expand-sm bg-dark border-bottom border-light fixed-top"
+            data-bs-theme="dark"
+        >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mucnkins Level Counter</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a
+                        class="nav-link dropdown-toggle mt-2"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        >
+                        Players<i class="fa fa-male ps-2" aria-hidden="true"></i></a>
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li>
+                            <a
+                            class="dropdown-item text-light btn-outline-primary"
+                            href="#"
+                            >1</a
+                            >
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-light" href="#">2</a>
+                        </li>
+                        <li><a class="dropdown-item text-light" href="#">3</a></li>
+                        <li><a class="dropdown-item text-light" href="#">4</a></li>
+                        <li><a class="dropdown-item text-light" href="#">5</a></li>
+                        <li><a class="dropdown-item text-light" href="#">6</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                        class="nav-link dropdown-toggle mt-2"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        >
+                        Winning Level <i class="fa fa-trophy ps-2" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                        <li>
+                            <a
+                            class="dropdown-item text-light btn-outline-primary"
+                            href="#"
+                            >10</a
+                            >
+                        </li>
+                        <li><a class="dropdown-item text-light" href="#">20</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero profile -->
+        <div class="container-fluid mt-5 border border-light p-2">
+            <!-- color picker -->
+            <label for="exampleColorInput" class="form-label">Card color</label>
+            <input type="color" class="form-control form-control-color" 
+            id="exampleColorInput" 
+            value="#563d7c" 
+            title="Choose your color">
+            <div class=" d-flex justify-content-center w-50 m-auto profile-icon-border">
+                <img src="images/swordsman_2822374.png" alt="warrior icon">
+                
+            </div>
+            <div class=" mt-3">
+                <div>
+                    <div class="form-floating mb-3 text-dark">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Epic hero name">
+                        <label for="floatingInput">Epic hero name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Race">
+                            <option selected>Dwarf</option>
+                            <option value="1">Elf</option>
+                            <option value="2">Hafling</option>
+                            <option value="3">Human</option>
+                        </select>
+                        <label for="floatingSelect">Race</label>
+                    </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect" aria-label="Race">
+                                <option selected>Thief</option>
+                                <option value="1">Thief</option>
+                                <option value="2">Warrior</option>
+                                <option value="3">Wizard</option>
+                            </select>
+                            <label for="floatingSelect">Class</label>
+                        </div>
+                </div>
+            </div>
+            <!-- Hero icon -->
+            
+            <!-- Gender buttons -->
+            <div class="btn-group d-block" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-dark" style="background-color: rgb(67, 67, 241);" for="btnradio1">Female <i class="fa-solid fa-venus"></i></label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-dark" style="background-color: rgb(254, 122, 144);" for="btnradio2">Male <i class="fa-solid fa-mars"></i></label>
+            </div>
+            <!-- Level counter -->
+            <div class="d-flex  justify-content-center mt-5 mobile-flex">
+                <div>
+                    <div class="d-flex justify-content-start">
+                        <h6 class="p-2 ">Lvl <i class="fa-solid fa-arrow-up-right-dots"></i></h6>
+                        <label for="level">
+                            <input type="number" id="level" name="level" min="1" max="20">
+                        </label>
+                    </div>
+                </div>
+                <!-- Items counter -->
+                <div>
+                    <div class="d-flex justify-content-start">
+                        <h6 class="p-2 ">Items <i class="fa-solid fa-shield-halved"></i></h6>
+                        <label for="weapons">
+                            <input type="number" id="weapons" name="weapons" min="0" max="50" >
+                        </label>
+                    </div>
+                </div>
+                <!-- Strength counter -->
+                <div>
+                    <div class="d-flex justify-content-start">
+                        <h6 class="p-2 ">Strength <i class="fa-solid fa-hand-fist"></i></h6>
+                        <label for="strength">
+                            <input type="number" id="strength" name="strength" min="0" max="100">
+                        </label>
+                    </div>
+                </div>
+            </div>
+           
+           
+        </div>
+        
+        
+    </main>
+    <footer class="text-center mt-5">
+    <div>
+        <p>&copy; 2023 - All Rights Reserved by Muchkins Game Creators</p>
+    </div>
+    </footer>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+    ></script>
+</body>
+</html>
