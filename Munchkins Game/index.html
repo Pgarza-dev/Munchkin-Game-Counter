@@ -112,9 +112,8 @@
             id="exampleColorInput" 
             value="#563d7c" 
             title="Choose your color">
-            <div class=" d-flex justify-content-center w-50 m-auto profile-icon-border">
-                <img src="images/swordsman_2822374.png" alt="warrior icon">
-                
+            <div  class="d-flex justify-content-center w-50 m-auto profile-icon-border">
+                <img id="hero-image"src="" alt="hero image">
             </div>
             <div class=" mt-3">
                 <div>
@@ -123,7 +122,7 @@
                         <label for="floatingInput">Epic hero name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingSelect" aria-label="Race">
+                        <select class="form-select" id="floatingSelectRace" aria-label="Race">
                             <option selected>Dwarf</option>
                             <option value="1">Elf</option>
                             <option value="2">Hafling</option>
@@ -132,11 +131,12 @@
                         <label for="floatingSelect">Race</label>
                     </div>
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect" aria-label="Race">
+                            <select class="form-select" id="floatingSelectClass" aria-label="Class" onchange="changeHeroImage()">
                                 <option selected>Thief</option>
-                                <option value="1">Thief</option>
-                                <option value="2">Warrior</option>
-                                <option value="3">Wizard</option>
+                                <option id="thief" value="1">Cleric</option>
+                                <option id="thief" value="2">Thief</option>
+                                <option id="warrior" value="3">Warrior</option>
+                                <option id="wizard" value="4">Wizard</option>
                             </select>
                             <label for="floatingSelect">Class</label>
                         </div>
