@@ -35,8 +35,8 @@ console.log("Hello World");
 // cards per player 
     function calculateCardsPerPlayer() {
         let players = parseInt(document.getElementById("players").value) || 0;
-        let cards = parseInt(document.getElementById("cards").value) || 0;
-        let cardsPerPlayer = cards / players;
+        let cards = document.getElementById("cards");
+        let cardsPerPlayer = players + cards;
         document.getElementById("cardsPerPlayer").value = cardsPerPlayer;
     }
 
