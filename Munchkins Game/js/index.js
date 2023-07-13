@@ -19,6 +19,15 @@ console.log("Hello World");
         }
     }
 
+// calculate strength
+    function calculateStrength() {
+        let level = parseInt(document.getElementById("level").value) || 0;
+        let weapons = parseInt(document.getElementById("weapons").value) || 0;
+        let strength = level + weapons;
+        document.getElementById("strength").value = strength;
+    }
+    
+
 
 
 
