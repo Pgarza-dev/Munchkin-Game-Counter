@@ -5,6 +5,9 @@
   /* margin-right: 10px; */
   background-color: #faca99;
 }
+.padding {
+ padding: .1rem;
+}
 @media (max-width: 425px) {
     .mobile-flex {
         flex-direction: column;
