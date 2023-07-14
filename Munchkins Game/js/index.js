@@ -99,19 +99,38 @@ function selectNumberOfPlayers() {
     const playerFour = document.getElementById("player4");
     const playerFive = document.getElementById("player5");
     const playerSix = document.getElementById("player6");
-    if (selectedNumber === "2") { // 1 player
+    if (selectedNumber === "2") { // 2 player
         playerTwo.style.display = "block";
-    } else if (selectedNumber === "2") { // 2 players
-        amountOfCards.innerHTML = "2";
-    } else if (selectedNumber === "3") { // 3 players
-        amountOfCards.innerHTML = "3";
-    } else if (selectedNumber === "4") { // 4 players
-        amountOfCards.innerHTML = "4";
-    } else if (selectedNumber === "5") { // 5 players
-        amountOfCards.innerHTML = "5";
-    } else if (selectedNumber === "6") { // 6 players
-        amountOfCards.innerHTML = "6";
+        playerThree.style.display = "none";
+        playerFour.style.display = "none";
+        playerFive.style.display = "none";
+        playerSix.style.display = "none";
+    } else if (selectedNumber === "3") { // 3 player
+        playerTwo.style.display = "block";
+        playerThree.style.display = "block";
+        playerFour.style.display = "none";
+        playerFive.style.display = "none";
+        playerSix.style.display = "none";
+    } else if (selectedNumber === "4") { // 4 player    
+        playerTwo.style.display = "block";
+        playerThree.style.display = "block";
+        playerFour.style.display = "block";
+        playerFive.style.display = "none";
+        playerSix.style.display = "none";
+    } else if (selectedNumber === "5") { // 5 player
+        playerTwo.style.display = "block";
+        playerThree.style.display = "block";
+        playerFour.style.display = "block";
+        playerFive.style.display = "block";
+        playerSix.style.display = "none";
+    } else if (selectedNumber === "6") { // 6 player
+        playerTwo.style.display = "block";
+        playerThree.style.display = "block";
+        playerFour.style.display = "block";
+        playerFive.style.display = "block";
+        playerSix.style.display = "block";
 }
 }
+selectNumberOfPlayers();
 
 
