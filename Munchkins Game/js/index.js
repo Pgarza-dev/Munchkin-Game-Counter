@@ -67,7 +67,7 @@ console.log("Hello to me");
         if (selectedClass === "1") { // Cleric
             heroImage.src = "images/priest_2822364 (3).png";            
         } else if (selectedClass === "2") { // Thief
-            heroImage.src = "";
+            heroImage.src = "images/thief_2822380 (1).png";
         } else if (selectedClass === "3") { // Warrior
             heroImage.src = "images/swordsman_2822374.png";
         } else if (selectedClass === "4") { // Wizard
