@@ -57,11 +57,14 @@ console.log("Hello to me");
 //     });
 //   });
   
+// chooseing race
 
 
-// chooseing classes
+
+// chooseing classes player one
+
     function changeHeroImage() {
-        let selectedClass = document.getElementById("floatingSelectClass").value;
+        let selectedClass = document.getElementById("floatingSelectClassPlayerOne").value;
         let heroImage = document.getElementById("hero-image");
 
         if (selectedClass === "1") { // Cleric
@@ -74,6 +77,94 @@ console.log("Hello to me");
             heroImage.src = "images/wizard_2822377.png";
         }
     }
+    changeHeroImage();
+    
+    //choosing classes player two
+    function changeHeroImagePlayerTwo() {
+        let selectedClass = document.getElementById("floatingSelectClassPlayerTwo").value;
+        let heroImage = document.getElementById("hero-image-player-2");
+
+        if (selectedClass === "1") { // Cleric
+            heroImage.src = "images/priest_2822364 (3).png";            
+        } else if (selectedClass === "2") { // Thief
+            heroImage.src = "images/thief_2822380 (1).png";
+        } else if (selectedClass === "3") { // Warrior
+            heroImage.src = "images/swordsman_2822374.png";
+        } else if (selectedClass === "4") { // Wizard
+            heroImage.src = "images/wizard_2822377.png";
+        }
+    }
+    changeHeroImagePlayerTwo();
+    
+    //choosing classes player three
+    function changeHeroImagePlayerThree() {
+        let selectedClass = document.getElementById("floatingSelectClassPlayerThree").value;
+        let heroImage = document.getElementById("hero-image-player-3");
+
+        if (selectedClass === "1") { // Cleric
+            heroImage.src = "images/priest_2822364 (3).png";            
+        } else if (selectedClass === "2") { // Thief
+            heroImage.src = "images/thief_2822380 (1).png";
+        } else if (selectedClass === "3") { // Warrior
+            heroImage.src = "images/swordsman_2822374.png";
+        } else if (selectedClass === "4") { // Wizard
+            heroImage.src = "images/wizard_2822377.png";
+        }
+    }
+    changeHeroImagePlayerThree();
+
+    //choosing classes player Four
+    function changeHeroImagePlayerFour() {
+        let selectedClass = document.getElementById("floatingSelectClassPlayerFour").value;
+        let heroImage = document.getElementById("hero-image-player-4");
+
+        if (selectedClass === "1") { // Cleric
+            heroImage.src = "images/priest_2822364 (3).png";            
+        } else if (selectedClass === "2") { // Thief
+            heroImage.src = "images/thief_2822380 (1).png";
+        } else if (selectedClass === "3") { // Warrior
+            heroImage.src = "images/swordsman_2822374.png";
+        } else if (selectedClass === "4") { // Wizard
+            heroImage.src = "images/wizard_2822377.png";
+        }
+    }
+    changeHeroImagePlayerFour();
+    
+    //choosing classes player Five
+    function changeHeroImagePlayerFive() {
+        let selectedClass = document.getElementById("floatingSelectClassPlayerFive").value;
+        let heroImage = document.getElementById("hero-image-player-5");
+
+        if (selectedClass === "1") { // Cleric
+            heroImage.src = "images/priest_2822364 (3).png";            
+        } else if (selectedClass === "2") { // Thief
+            heroImage.src = "images/thief_2822380 (1).png";
+        } else if (selectedClass === "3") { // Warrior
+            heroImage.src = "images/swordsman_2822374.png";
+        } else if (selectedClass === "4") { // Wizard
+            heroImage.src = "images/wizard_2822377.png";
+        }
+    }
+    changeHeroImagePlayerFive();
+  
+    //choosing classes player Six
+    function changeHeroImagePlayerSix() {
+        let selectedClass = document.getElementById("floatingSelectClassPlayerSix").value;
+        let heroImage = document.getElementById("hero-image-player-6");
+
+        if (selectedClass === "1") { // Cleric
+            heroImage.src = "images/priest_2822364 (3).png";            
+        } else if (selectedClass === "2") { // Thief
+            heroImage.src = "images/thief_2822380 (1).png";
+        } else if (selectedClass === "3") { // Warrior
+            heroImage.src = "images/swordsman_2822374.png";
+        } else if (selectedClass === "4") { // Wizard
+            heroImage.src = "images/wizard_2822377.png";
+        }
+    }
+    changeHeroImagePlayerSix();
+
+    
 
 // calculate strength
     function calculateStrength() {
