@@ -1,7 +1,7 @@
 console.log("Hello to me");
-// chooseing race
+// choosing race
 
-// chooseing classes player one
+// choosing classes player one
 function changeHeroImage() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerOne"
@@ -24,7 +24,7 @@ function changeHeroImage() {
 }
 changeHeroImage();
 
-//choosing classes player two
+// choosing classes player two
 function changeHeroImagePlayerTwo() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerTwo"
@@ -47,7 +47,7 @@ function changeHeroImagePlayerTwo() {
 }
 changeHeroImagePlayerTwo();
 
-//choosing classes player three
+// choosing classes player three
 function changeHeroImagePlayerThree() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerThree"
@@ -70,7 +70,7 @@ function changeHeroImagePlayerThree() {
 }
 changeHeroImagePlayerThree();
 
-//choosing classes player Four
+// choosing classes player Four
 function changeHeroImagePlayerFour() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerFour"
@@ -93,7 +93,7 @@ function changeHeroImagePlayerFour() {
 }
 changeHeroImagePlayerFour();
 
-//choosing classes player Five
+// choosing classes player Five
 function changeHeroImagePlayerFive() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerFive"
@@ -116,7 +116,7 @@ function changeHeroImagePlayerFive() {
 }
 changeHeroImagePlayerFive();
 
-//choosing classes player Six
+// choosing classes player Six
 function changeHeroImagePlayerSix() {
   let selectedClass = document.getElementById(
     "floatingSelectClassPlayerSix"
@@ -141,59 +141,57 @@ changeHeroImagePlayerSix();
 
 // calculate strength player one
 function calculateStrength() {
-  let level = parseInt(document.getElementById("level").value) || 0;
+  let level = parseInt(document.getElementById("level").value) || 1;
   let weapons = parseInt(document.getElementById("weapons").value) || 0;
   let strength = level + weapons;
   document.getElementById("strength").value = strength;
 }
 calculateStrength();
 
-//calculate strengthe player two
+// calculate strength player two
 function calculateStrengthP2() {
-  let level = parseInt(document.getElementById("levelP2").value) || 0;
+  let level = parseInt(document.getElementById("levelP2").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP2").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP2").value = strength;
 }
 calculateStrengthP2();
 
-//calculate strengthe player three
+// calculate strength player three
 function calculateStrengthP3() {
-  let level = parseInt(document.getElementById("levelP3").value) || 0;
+  let level = parseInt(document.getElementById("levelP3").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP3").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP3").value = strength;
 }
 calculateStrengthP3();
 
-//calculate strengthe player four
+// calculate strength player four
 function calculateStrengthP4() {
-  let level = parseInt(document.getElementById("levelP4").value) || 0;
+  let level = parseInt(document.getElementById("levelP4").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP4").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP4").value = strength;
 }
 calculateStrengthP4();
 
-//calculate strengthe player five
+// calculate strength player five
 function calculateStrengthP5() {
-  let level = parseInt(document.getElementById("levelP5").value) || 0;
+  let level = parseInt(document.getElementById("levelP5").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP5").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP5").value = strength;
 }
 calculateStrengthP5();
 
-//calculate strengthe player six
+// calculate strength player six
 function calculateStrengthP6() {
-  let level = parseInt(document.getElementById("levelP6").value) || 0;
+  let level = parseInt(document.getElementById("levelP6").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP6").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP6").value = strength;
 }
 calculateStrengthP6();
-
-// calculate strength player two
 
 // card color
 function changeCardColor() {
@@ -203,49 +201,68 @@ function changeCardColor() {
 }
 
 // cards per player
+const playerOne = document.getElementById("card");
+const playerTwo = document.getElementById("player2");
+const playerThree = document.getElementById("player3");
+const playerFour = document.getElementById("player4");
+const playerFive = document.getElementById("player5");
+const playerSix = document.getElementById("player6");
 
-function selectNumberOfPlayers() {
-  let selectedNumber = document.getElementById("selectedNumber").value;
-  const playerTwo = document.getElementById("player2");
-  const playerThree = document.getElementById("player3");
-  const playerFour = document.getElementById("player4");
-  const playerFive = document.getElementById("player5");
-  const playerSix = document.getElementById("player6");
-  if (selectedNumber === "2") {
-    // 2 player
+function changeNumberOfPlayers() {
+  const selectedNumber = document.getElementById("selectedNumber").value;
+
+  if (selectedNumber === "1") {
+    // 1 player
+    playerOne.style.display = "block";
+    playerTwo.style.display = "none";
+    playerThree.style.display = "none";
+    playerFour.style.display = "none";
+    playerFive.style.display = "none";
+    playerSix.style.display = "none";
+  } else if (selectedNumber === "2") {
+    // 2 players selected
+    playerOne.style.display = "block";
     playerTwo.style.display = "block";
     playerThree.style.display = "none";
     playerFour.style.display = "none";
     playerFive.style.display = "none";
     playerSix.style.display = "none";
   } else if (selectedNumber === "3") {
-    // 3 player
+    // 3 players selected
+    playerOne.style.display = "block";
     playerTwo.style.display = "block";
     playerThree.style.display = "block";
     playerFour.style.display = "none";
     playerFive.style.display = "none";
     playerSix.style.display = "none";
   } else if (selectedNumber === "4") {
-    // 4 player
+    // 4 players selected
     playerTwo.style.display = "block";
     playerThree.style.display = "block";
     playerFour.style.display = "block";
     playerFive.style.display = "none";
     playerSix.style.display = "none";
   } else if (selectedNumber === "5") {
-    // 5 player
+    // 5 players selected
     playerTwo.style.display = "block";
     playerThree.style.display = "block";
     playerFour.style.display = "block";
     playerFive.style.display = "block";
     playerSix.style.display = "none";
   } else if (selectedNumber === "6") {
-    // 6 player
+    // 6 players selected
     playerTwo.style.display = "block";
     playerThree.style.display = "block";
     playerFour.style.display = "block";
     playerFive.style.display = "block";
     playerSix.style.display = "block";
+  } else {
+    playerOne.style.display = "block";
+    playerTwo.style.display = "none";
+    playerThree.style.display = "none";
+    playerFour.style.display = "none";
+    playerFive.style.display = "none";
+    playerSix.style.display = "none";
   }
 }
-selectNumberOfPlayers();
+changeNumberOfPlayers();
