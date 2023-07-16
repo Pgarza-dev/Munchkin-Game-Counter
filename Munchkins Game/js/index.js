@@ -20,6 +20,9 @@ function changeHeroImage() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImage();
@@ -43,6 +46,9 @@ function changeHeroImagePlayerTwo() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImagePlayerTwo();
@@ -66,6 +72,9 @@ function changeHeroImagePlayerThree() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImagePlayerThree();
@@ -89,6 +98,9 @@ function changeHeroImagePlayerFour() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImagePlayerFour();
@@ -112,6 +124,9 @@ function changeHeroImagePlayerFive() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImagePlayerFive();
@@ -135,6 +150,9 @@ function changeHeroImagePlayerSix() {
   } else if (selectedClass === "4") {
     // Wizard
     heroImage.src = "images/wizard_2822377.png";
+  } else if (selectedClass === "5") {
+    // None
+    heroImage.style.display = "none";
   }
 }
 changeHeroImagePlayerSix();
