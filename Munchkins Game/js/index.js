@@ -29,15 +29,15 @@ function changeRaceImage() {
     ).value;
     // Elf
     if (selectedRace === "1" && selectedClass === "0" || selectedClass === "5") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/elf.jpg";
+    } else if ( selectedRace === "1" && selectedClass === "1") {
+      heroRaceImage.src = "images/elf-cleric.jpg";
     } else if ( selectedRace === "1" && selectedClass === "2") {
-      heroRaceImage.src = "";
-    } else if ( selectedRace === "1" && selectedClass === "2") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/elf-thief.jpg";
     } else if ( selectedRace === "1" && selectedClass === "3") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/elf-warrior.jpg";
     } else if ( selectedRace === "1" && selectedClass === "4") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/elf-wizard.jpg";
     } else if ( selectedRace === "1" && selectedClass === "5") {
       heroRaceImage.style.display = "none";
     // Hafling
@@ -55,13 +55,13 @@ function changeRaceImage() {
       heroRaceImage.style.display = "none";
     // Dwarf
     } else if (selectedRace === "3" && selectedClass === "0" || selectedClass === "5") {
-      heroRaceImage.src = "images/gunnery_2822367.png";
+      heroRaceImage.src = "images/dwarf.jpg";
     } else if (selectedRace === "3" && selectedClass === "1") {
       heroRaceImage.src = "";
     } else if ( selectedRace === "3" && selectedClass === "2") {
       heroRaceImage.src = "";
     } else if ( selectedRace === "3" && selectedClass === "3") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/dwarf-warrior.jpg";
     } else if ( selectedRace === "3" && selectedClass === "4") {
       heroRaceImage.src = "";
     } else if ( selectedRace === "3" && selectedClass === "5") {
