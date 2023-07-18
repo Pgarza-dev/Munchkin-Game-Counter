@@ -42,15 +42,15 @@ function changeRaceImage() {
       heroRaceImage.style.display = "none";
     // Hafling
     } else if (selectedRace === "2" && selectedClass === "0" || selectedClass === "5") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/hobbit-2.jpg";
     } else if (selectedRace === "2" && selectedClass === "1") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/hobbit-cleric.jpg";
     } else if ( selectedRace === "2" && selectedClass === "2") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/hobbit-thief.jpg";
     } else if ( selectedRace === "2" && selectedClass === "3") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/warrior hobbit.jpg";
     } else if ( selectedRace === "2" && selectedClass === "4") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/hobbit-wizard.jpg";
     } else if ( selectedRace === "2" && selectedClass === "5") {
       heroRaceImage.style.display = "none";
     // Dwarf
