@@ -37,7 +37,7 @@ function changeRaceImage() {
     } else if ( selectedRace === "1" && selectedClass === "3") {
       heroRaceImage.src = "images/elf-warrior.jpg";
     } else if ( selectedRace === "1" && selectedClass === "4") {
-      heroRaceImage.src = "images/elf-wizard.jpg";
+      heroRaceImage.src = "images/human-wizard.jpg";
     } else if ( selectedRace === "1" && selectedClass === "5") {
       heroRaceImage.style.display = "none";
     // Hafling
@@ -57,29 +57,29 @@ function changeRaceImage() {
     } else if (selectedRace === "3" && selectedClass === "0" || selectedClass === "5") {
       heroRaceImage.src = "images/dwarf.jpg";
     } else if (selectedRace === "3" && selectedClass === "1") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/dwarf-cleric.jpg";
     } else if ( selectedRace === "3" && selectedClass === "2") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/dwarf-thief.jpg";
     } else if ( selectedRace === "3" && selectedClass === "3") {
       heroRaceImage.src = "images/dwarf-warrior.jpg";
     } else if ( selectedRace === "3" && selectedClass === "4") {
-      heroRaceImage.src = "";
+      heroRaceImage.src = "images/dwarf-wizard.jpg";
     } else if ( selectedRace === "3" && selectedClass === "5") {
       heroRaceImage.style.display = "none";
       // Human
     } else if (selectedRace === "4" && selectedClass === "0") {
-      heroRaceImage.src = "images/adventurer_2822371.png";
+      heroRaceImage.src = "images/human.jpg";
     } else if (selectedRace === "4" && selectedClass === "1") {
-      heroRaceImage.src = "images/priest_2822364 (3).png";
+      heroRaceImage.src = "images/human-cleric.jpg";
     } else if ( selectedRace === "4" && selectedClass === "2") {
-      heroRaceImage.src = "images/thief_2822380 (1).png";
+      heroRaceImage.src = "images/human-thief.jpg";
     } else if ( selectedRace === "4" && selectedClass === "3") {
-      heroRaceImage.src = "images/swordsman_2822374.png";
+      heroRaceImage.src = "images/human-warrior.jpg";
     } else if ( selectedRace === "4" && selectedClass === "4") {
-      heroRaceImage.src = "images/wizard_2822377.png";
+      heroRaceImage.src = "images/elf-wizard.jpg";
     } else if ( selectedRace === "4" && selectedClass === "5") {
-      heroRaceImage.src = "images/adventurer_2822371.png";
-    } else {heroRaceImage.src = "images/adventurer_2822371.png"};
+      heroRaceImage.src = "images/human.jpg";
+    } else {heroRaceImage.src = "images/human.jpg"};
 }
 changeRaceImage();
 

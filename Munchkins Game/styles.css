@@ -13,6 +13,9 @@
   padding: 10px;
   margin-bottom: 10px;
 }
+img {
+  height: 256px;
+}
 .mix-blend-mode {
   mix-blend-mode: multiply;
 }
