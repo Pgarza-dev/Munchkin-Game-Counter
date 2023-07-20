@@ -88,7 +88,7 @@
         <label for="cardColorInput" class="form-label">Card color</label>
         <input
           type="color"
-          class="form-control form-control-color padding"
+          class="form-control form-control-color p-0"
           onchange="changeCardColor()"
           id="cardColorInput"
           value="#212529"
@@ -136,7 +136,7 @@
 
 
         <div
-          class="d-flex justify-content-center w-50 m-auto profile-icon-border"
+          class="d-flex justify-content-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
         >
           <img id="hero-race-image" class="text-dark mix-blend-mode" src="" alt="hero race image " />
           <!-- <img id="hero-image" class="text-dark" src="" alt="hero class image" /> -->
@@ -150,7 +150,7 @@
                 id="floatingInput"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Epic hero name</label>
+              <label for="floatingInput">Your epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -159,11 +159,11 @@
                 aria-label="Race"
                 onchange="changeRaceImage()"
               >
-                <option selected>Choose race</option>
+                <option disabled>Choose race</option>
                 <option id="elf" value="1">Elf</option>
                 <option id="hafling" value="2">Hafling</option>
                 <option id="dwarf" value="3">Dwarf</option>
-                <option id="human" value="4">Human</option>
+                <option selected id="human" value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -176,12 +176,10 @@
                 
               >
                 <option selected value="0">No class</option>
-                <!-- <option id="noClass" value="0">No class</option> -->
                 <option id="cleric" value="1">Cleric</option>
                 <option id="thief" value="2">Thief</option>
                 <option id="warrior" value="3">Warrior</option>
                 <option id="wizard" value="4">Wizard</option>
-                <!-- <option id="noClass" value="5">None</option> -->
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -206,7 +204,7 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            >Female <i class="fa-solid fa-venus"></i
+            ><i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -219,7 +217,7 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            >Male <i class="fa-solid fa-mars"></i
+            ><i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -227,7 +225,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                Lvl <i class="fa-solid fa-arrow-up-right-dots"></i>
+                 <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -236,7 +234,7 @@
                   name="level"
                   min="1"
                   max="20"
-                  placeholder="1"
+                  placeholder="level"
                   oninput="calculateStrength()"
                 />
               </label>
@@ -246,7 +244,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                Gear <i class="fa-solid fa-shield-halved"></i>
+                 <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -255,6 +253,7 @@
                   name="weapons"
                   min="1"
                   max="50"
+                  placeholder="gear"
                   oninput="calculateStrength()"
                 />
               </label>
@@ -264,7 +263,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                Strength <i class="fa-solid fa-hand-fist"></i>
+                 <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
@@ -330,12 +329,10 @@
                 onchange="changeRaceImageP2()"
               >
               <option selected value="0">Choose class</option>
-              <!-- <option id="noClass" value="0">No class</option> -->
               <option id="cleric" value="1">Cleric</option>
               <option id="thief" value="2">Thief</option>
               <option id="warrior" value="3">Warrior</option>
               <option id="wizard" value="4">Wizard</option>
-              <option id="none" value="5">None</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -483,12 +480,10 @@
                 onchange="changeRaceImageP3()"
               >
               <option selected value="0">Choose class</option>
-              <!-- <option id="noClass" value="0">No class</option> -->
               <option id="cleric" value="1">Cleric</option>
               <option id="thief" value="2">Thief</option>
               <option id="warrior" value="3">Warrior</option>
               <option id="wizard" value="4">Wizard</option>
-              <option id="none" value="5">None</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -636,12 +631,10 @@
                 onchange="changeRaceImageP4()"
               >
               <option selected value="0">Choose class</option>
-              <!-- <option id="noClass" value="0">No class</option> -->
               <option id="cleric" value="1">Cleric</option>
               <option id="thief" value="2">Thief</option>
               <option id="warrior" value="3">Warrior</option>
               <option id="wizard" value="4">Wizard</option>
-              <option id="none" value="5">None</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -789,12 +782,10 @@
                 onchange="changeRaceImageP5()"
               >
               <option selected value="0">Choose class</option>
-              <!-- <option id="noClass" value="0">No class</option> -->
               <option id="cleric" value="1">Cleric</option>
               <option id="thief" value="2">Thief</option>
               <option id="warrior" value="3">Warrior</option>
               <option id="wizard" value="4">Wizard</option>
-              <option id="none" value="5">None</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -944,13 +935,10 @@
               >
                 <option selected>Choose class</option>
                 <option selected value="0">Choose class</option>
-                <!-- <option id="noClass" value="0">No class</option> -->
                 <option id="cleric" value="1">Cleric</option>
                 <option id="thief" value="2">Thief</option>
                 <option id="warrior" value="3">Warrior</option>
                 <option id="wizard" value="4">Wizard</option>
-                <option id="none" value="5">None</option>
-              </select>
               <label for="floatingSelect">Class</label>
             </div>
           </div>
