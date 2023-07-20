@@ -15,6 +15,7 @@
 } */
 img {
   height: 256px;
+  width: 256px;
 }
 .mix-blend-mode {
   mix-blend-mode: multiply;

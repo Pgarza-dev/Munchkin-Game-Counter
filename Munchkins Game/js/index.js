@@ -1,4 +1,7 @@
-console.log("Hello to me");
+// import {cleric} from "./classes.js";
+
+console.log("index.js loaded");
+
 
 function changeRaceImage() {
     let selectedRace = document.getElementById("floatingSelectRacePlayerOne").value;
@@ -6,11 +9,15 @@ function changeRaceImage() {
     let selectedClass = document.getElementById(
       "floatingSelectClassPlayerOne"
     ).value;
+    let imgText = document.getElementById("img-text");
+    let imgLabel = document.getElementById("img-label");
     // Elf
     if (selectedRace === "1" && selectedClass === "0" || selectedClass === "5") {
       heroRaceImage.src = "images/elf.jpg";
     } else if ( selectedRace === "1" && selectedClass === "1") {
       heroRaceImage.src = "images/elf-cleric.jpg";
+      imgLabel.innerHTML = "Resurrection:";
+      imgText.innerHTML = "Elf Cleric";
     } else if ( selectedRace === "1" && selectedClass === "2") {
       heroRaceImage.src = "images/elf-thief.jpg";
     } else if ( selectedRace === "1" && selectedClass === "3") {
@@ -44,6 +51,7 @@ function changeRaceImage() {
       heroRaceImage.src = "images/human.jpg";
     } else if (selectedRace === "4" && selectedClass === "1") {
       heroRaceImage.src = "images/human-cleric.jpg";
+      imgText.innerHTML = "Resurrection:";
     } else if ( selectedRace === "4" && selectedClass === "2") {
       heroRaceImage.src = "images/human-thief.jpg";
     } else if ( selectedRace === "4" && selectedClass === "3") {
@@ -115,68 +123,6 @@ function changeRaceImageP2() {
   }  
 }
 changeRaceImageP2();
-
-function changeRaceImageP3() {
-  let selectedRace = document.getElementById("floatingSelectRacePlayerThree").value;
-  let heroRaceImage = document.getElementById("hero-race-image-p3")
-  let selectedClass = document.getElementById(
-    "floatingSelectClassPlayerThree"
-  ).value;
-  // Elf
-  if (selectedRace === "1" && selectedClass === "0" || selectedClass === "5") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "1" && selectedClass === "2") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "1" && selectedClass === "2") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "1" && selectedClass === "3") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "1" && selectedClass === "4") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "1" && selectedClass === "5") {
-    heroRaceImage.style.display = "none";
-  // Hafling
-  } if (selectedRace === "2" && selectedClass === "0" || selectedClass === "5") {
-    heroRaceImage.src = "";
-  } else if (selectedRace === "2" && selectedClass === "1") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "2" && selectedClass === "2") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "2" && selectedClass === "3") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "2" && selectedClass === "4") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "2" && selectedClass === "5") {
-    heroRaceImage.style.display = "none";
-  // Dwarf
-  } else if (selectedRace === "3" && selectedClass === "0" || selectedClass === "5") {
-    heroRaceImage.src = "images/gunnery_2822367.png";
-  } else if (selectedRace === "3" && selectedClass === "1") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "3" && selectedClass === "2") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "3" && selectedClass === "3") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "3" && selectedClass === "4") {
-    heroRaceImage.src = "";
-  } else if ( selectedRace === "3" && selectedClass === "5") {
-    heroRaceImage.style.display = "none";
-    // Human
-  } else if (selectedRace === "4" && selectedClass === "0" || selectedClass === "5") {
-    heroRaceImage.src = "images/adventurer_2822371.png";
-  } else if (selectedRace === "4" && selectedClass === "1") {
-    heroRaceImage.src = "images/priest_2822364 (3).png";
-  } else if ( selectedRace === "4" && selectedClass === "2") {
-    heroRaceImage.src = "images/thief_2822380 (1).png";
-  } else if ( selectedRace === "4" && selectedClass === "3") {
-    heroRaceImage.src = "images/swordsman_2822374.png";
-  } else if ( selectedRace === "4" && selectedClass === "4") {
-    heroRaceImage.src = "images/wizard_2822377.png";
-  } else if ( selectedRace === "4" && selectedClass === "5") {
-    heroRaceImage.style.display = "none";
-  }  
-}
-changeRaceImageP3();
 
 function changeRaceImageP3() {
   let selectedRace = document.getElementById("floatingSelectRacePlayerThree").value;
@@ -642,6 +588,7 @@ function changeCardColor() {
   let card = document.getElementById("card");
   card.style.backgroundColor = cardColor;
 }
+changeCardColor();
 
 // cards per player
 const playerOne = document.getElementById("card");
