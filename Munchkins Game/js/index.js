@@ -5,41 +5,105 @@ console.log("index.js loaded");
 // CHANGING IMAGE FOR RACE AND CLASS PLAYER ONE
 function changeRaceImage(playerNumber) {
   const raceClasses = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -60,11 +124,14 @@ function changeRaceImage(playerNumber) {
     //   "5": { display: true }
     // }
   };
-console.log(raceClasses);
+  console.log(raceClasses);
 
-
-  const selectedRace = document.getElementById(`floatingSelectRacePlayerOne`).value;
-  const selectedClass = document.getElementById(`floatingSelectClassPlayerOne`).value;
+  const selectedRace = document.getElementById(
+    `floatingSelectRacePlayerOne`
+  ).value;
+  const selectedClass = document.getElementById(
+    `floatingSelectClassPlayerOne`
+  ).value;
 
   const heroRaceImage = document.getElementById(`hero-race-image`);
   const imgText = document.getElementById("img-text");
@@ -98,45 +165,108 @@ console.log(raceClasses);
   }
 }
 
-
 // PLAYER 2 CHANGING RACE AND CLASS
-function changeRaceImageP2(playerNumber) {
+function changeRaceImageP2() {
   const raceClassesP2 = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -158,12 +288,16 @@ function changeRaceImageP2(playerNumber) {
     // }
   };
 
-  const selectedRaceP2 = document.getElementById(`floatingSelectRacePlayerTwo`).value;
-  const selectedClassP2 = document.getElementById(`floatingSelectClassPlayerTwo`).value;
+  const selectedRaceP2 = document.getElementById(
+    `floatingSelectRacePlayerTwo`
+  ).value;
+  const selectedClassP2 = document.getElementById(
+    `floatingSelectClassPlayerTwo`
+  ).value;
 
   const heroRaceImageP2 = document.getElementById(`hero-race-image-p2`);
-  const imgTextP2 = document.getElementById("img-text");
-  const imgLabelP2 = document.getElementById("img-label");
+  const imgTextP2 = document.getElementById("img-text-p2");
+  const imgLabelP2 = document.getElementById("img-label-p2");
 
   const playerDataP2 = raceClassesP2[selectedRaceP2][selectedClassP2];
 
@@ -196,41 +330,105 @@ function changeRaceImageP2(playerNumber) {
 // PLAYER 3 CHANGING RACE AND CLASS
 function changeRaceImageP3(playerNumber) {
   const raceClassesP3 = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -252,12 +450,16 @@ function changeRaceImageP3(playerNumber) {
     // }
   };
 
-  const selectedRaceP3 = document.getElementById(`floatingSelectRacePlayerThree`).value;
-  const selectedClassP3 = document.getElementById(`floatingSelectClassPlayerThree`).value;
+  const selectedRaceP3 = document.getElementById(
+    `floatingSelectRacePlayerThree`
+  ).value;
+  const selectedClassP3 = document.getElementById(
+    `floatingSelectClassPlayerThree`
+  ).value;
 
   const heroRaceImageP3 = document.getElementById(`hero-race-image-p3`);
-  const imgTextP3 = document.getElementById("img-text");
-  const imgLabelP3 = document.getElementById("img-label");
+  const imgTextP3 = document.getElementById("img-text-p3");
+  const imgLabelP3 = document.getElementById("img-label-p3");
 
   const playerDataP3 = raceClassesP3[selectedRaceP3][selectedClassP3];
 
@@ -290,41 +492,105 @@ function changeRaceImageP3(playerNumber) {
 // PLAYER 4 CHANGING RACE AND CLASS
 function changeRaceImageP4(playerNumber) {
   const raceClassesP4 = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -346,12 +612,16 @@ function changeRaceImageP4(playerNumber) {
     // }
   };
 
-  const selectedRaceP4 = document.getElementById(`floatingSelectRacePlayerFour`).value;
-  const selectedClassP4 = document.getElementById(`floatingSelectClassPlayerFour`).value;
+  const selectedRaceP4 = document.getElementById(
+    `floatingSelectRacePlayerFour`
+  ).value;
+  const selectedClassP4 = document.getElementById(
+    `floatingSelectClassPlayerFour`
+  ).value;
 
   const heroRaceImageP4 = document.getElementById(`hero-race-image-p4`);
-  const imgTextP4 = document.getElementById("img-text");
-  const imgLabelP4 = document.getElementById("img-label");
+  const imgTextP4 = document.getElementById("img-text-p4");
+  const imgLabelP4 = document.getElementById("img-label-p4");
 
   const playerDataP4 = raceClassesP4[selectedRaceP4][selectedClassP4];
 
@@ -384,41 +654,105 @@ function changeRaceImageP4(playerNumber) {
 // PLAYER 5 CHANGING RACE AND CLASS
 function changeRaceImageP5(playerNumber) {
   const raceClassesP5 = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -440,12 +774,16 @@ function changeRaceImageP5(playerNumber) {
     // }
   };
 
-  const selectedRaceP5 = document.getElementById(`floatingSelectRacePlayerFive`).value;
-  const selectedClassP5 = document.getElementById(`floatingSelectClassPlayerFive`).value;
+  const selectedRaceP5 = document.getElementById(
+    `floatingSelectRacePlayerFive`
+  ).value;
+  const selectedClassP5 = document.getElementById(
+    `floatingSelectClassPlayerFive`
+  ).value;
 
   const heroRaceImageP5 = document.getElementById(`hero-race-image-p5`);
-  const imgTextP5 = document.getElementById("img-text");
-  const imgLabelP5 = document.getElementById("img-label");
+  const imgTextP5 = document.getElementById("img-text-p5");
+  const imgLabelP5 = document.getElementById("img-label-p5");
 
   const playerDataP5 = raceClassesP5[selectedRaceP5][selectedClassP5];
 
@@ -478,41 +816,105 @@ function changeRaceImageP5(playerNumber) {
 // PLAYER 6 CHANGING RACE AND CLASS
 function changeRaceImageP6(playerNumber) {
   const raceClassesP6 = {
-    "1": {
-      "0": { src: "images/elf.jpg" },
-      "1": { src: "images/elf-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/elf-thief.jpg" },
-      "3": { src: "images/elf-warrior.jpg" },
-      "4": { src: "images/human-wizard.jpg" },
+    1: {
+      0: { src: "images/elf.jpg" },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "2": {
+    2: {
       // Add data for player two
-      "0": { src: "images/hobbit-2.jpg" },
-      "1": { src: "images/hobbit-cleric.jpg", text: "Elf Cleric", label: "Resurrection:" },
-      "2": { src: "images/hobbit-thief.jpg" },
-      "3": { src: "images/warrior hobbit.jpg" },
-      "4": { src: "images/hobbit-wizard.jpg" },
+      0: { src: "images/hobbit-2.jpg" },
+      1: {
+        src: "images/hobbit-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/hobbit-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/warrior hobbit.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/hobbit-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "3": {
+    3: {
       // Add data for player three
-      "0": { src: "images/dwarf.jpg" },
-      "1": { src: "images/dwarf-cleric.jpg", text: "dwarf Cleric", label: "Resurrection:" },
-      "2": { src: "images/dwarf-thief.jpg" },
-      "3": { src: "images/dwarf-warrior.jpg" },
-      "4": { src: "images/dwarf-wizard.jpg" },
+      0: { src: "images/dwarf.jpg" },
+      1: {
+        src: "images/dwarf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/dwarf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/dwarf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/dwarf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
     },
-    "4": {
+    4: {
       // Add data for player four
-      "0": { src: "images/human.jpg" },
-      "1": { src: "images/human-cleric.jpg", text: "human Cleric", label: "Resurrection:" },
-      "2": { src: "images/human-thief.jpg" },
-      "3": { src: "images/human-warrior.jpg" },
-      "4": { src: "images/elf-wizard.jpg" },
+      0: { src: "images/human.jpg" },
+      1: {
+        src: "images/human-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/human-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/human-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/elf-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
       // "5": { display: true }
-    }
+    },
     // ,
     // "5": {
     //   // Add data for player five
@@ -534,12 +936,16 @@ function changeRaceImageP6(playerNumber) {
     // }
   };
 
-  const selectedRaceP6 = document.getElementById(`floatingSelectRacePlayerSix`).value;
-  const selectedClassP6 = document.getElementById(`floatingSelectClassPlayerSix`).value;
+  const selectedRaceP6 = document.getElementById(
+    `floatingSelectRacePlayerSix`
+  ).value;
+  const selectedClassP6 = document.getElementById(
+    `floatingSelectClassPlayerSix`
+  ).value;
 
   const heroRaceImageP6 = document.getElementById(`hero-race-image-p6`);
-  const imgTextP6 = document.getElementById("img-text");
-  const imgLabelP6 = document.getElementById("img-label");
+  const imgTextP6 = document.getElementById("img-text-p6");
+  const imgLabelP6 = document.getElementById("img-label-p6");
 
   const playerDataP6 = raceClassesP6[selectedRaceP6][selectedClassP6];
 
@@ -571,14 +977,13 @@ function changeRaceImageP6(playerNumber) {
 
 // Call the function initially for each player to set the default images
 document.addEventListener("DOMContentLoaded", function () {
-changeRaceImage(1);
-changeRaceImageP2(2);
-changeRaceImageP3(3);
-changeRaceImageP4(4);
-changeRaceImageP5(5);
-changeRaceImageP6(6);
+  changeRaceImage(1);
+  changeRaceImageP2(2);
+  changeRaceImageP3(3);
+  changeRaceImageP4(4);
+  changeRaceImageP5(5);
+  changeRaceImageP6(6);
 });
-
 
 // CALCULATE STRENGTH PLAYER ONE
 function calculateStrength() {
@@ -634,7 +1039,6 @@ function calculateStrengthP6() {
 }
 calculateStrengthP6();
 
-
 // CARD COLOR PER PLAYER
 function changeCardColor() {
   let cardColor = document.getElementById("cardColorInput").value;
@@ -643,7 +1047,7 @@ function changeCardColor() {
   let cardColorP4 = document.getElementById("cardColorInputP4").value;
   let cardColorP5 = document.getElementById("cardColorInputP5").value;
   let cardColorP6 = document.getElementById("cardColorInputP6").value;
-  
+
   let card = document.getElementById("card");
   card.style.backgroundColor = cardColor;
 
@@ -663,7 +1067,6 @@ function changeCardColor() {
   player6Card.style.backgroundColor = cardColorP6;
 }
 changeCardColor();
-
 
 // CARDS PER PLAYER
 const playerOne = document.getElementById("card");

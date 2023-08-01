@@ -14,8 +14,8 @@
   margin-bottom: 10px;
 } */
 img {
-  height: 256px;
-  width: 256px;
+  height: 200px;
+  width: 200px;
 }
 .mix-blend-mode {
   mix-blend-mode: multiply;

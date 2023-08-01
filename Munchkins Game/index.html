@@ -26,7 +26,7 @@
     <!-- css -->
     <link rel="stylesheet" href="styles.css" />
     <!-- js -->
-    <script defer src="js/index.js" ></script>
+    <script defer src="js/index.js"></script>
   </head>
   <body
     class="bg-dark text-light pt-5 container-lg"
@@ -83,21 +83,35 @@
     <main>
       <!-- Hero profile -->
       <div id="card" class="container-fluid mt-5 border border-light p-2">
-        <h3>PLAYER 1</h3>
         <!-- color picker -->
-        <label for="cardColorInput" class="form-label">Card color</label>
-        <input
-          type="color"
-          class="form-control form-control-color p-0"
-          onchange="changeCardColor()"
-          id="cardColorInput"
-          value="#212529"
-          title="Choose your color"
-        />
+        <div class="d-flex justify-content-between flex-row-reverse">
+          <h3>Player 1</h3>
+          <div class="d-flex align-items-start">
+            <label for="cardColorInput" class="form-label"></label>
+            <input
+              type="color"
+              class="form-control form-control-color p-0"
+              onchange="changeCardColor()"
+              id="cardColorInput"
+              value="#212529"
+              title="Choose your color"
+            />
+
+            <div class="ms-2">
+              <p>Card Color</p>
+            </div>
+          </div>
+        </div>
         <div
-          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-          <img id="hero-race-image" class="text-dark mix-blend-mode" src="" alt="hero race image " />
+          <img
+            id="hero-race-image"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image "
+          />
           <p id="img-label" class="text-dark"></p>
           <p id="img-text" class="text-dark"></p>
         </div>
@@ -117,7 +131,7 @@
                 class="form-select"
                 id="floatingSelectRacePlayerOne"
                 aria-label="Race"
-                onchange="changeRaceImage(playerOne)"
+                onchange="changeRaceImage()"
               >
                 <option disabled>Choose race</option>
                 <option id="elf" value="1">Elf</option>
@@ -132,8 +146,7 @@
                 class="form-select"
                 id="floatingSelectClassPlayerOne"
                 aria-label="Class"
-                onchange="changeRaceImage(playerOne)"
-                
+                onchange="changeRaceImage()"
               >
                 <option selected value="0">No class</option>
                 <option id="cleric" value="1">Cleric</option>
@@ -164,7 +177,7 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            ><i class="fa-solid fa-venus"></i
+            ><i class="fa-solid fa-venus fa-2xl"></i
           ></label>
           <input
             type="radio"
@@ -177,15 +190,31 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            ><i class="fa-solid fa-mars"></i
+            ><i class="fa-solid fa-mars fa-2xl"></i
           ></label>
+        </div>
+        <div class="mt-3">
+          <input
+            type="radio"
+            class="btn-check"
+            name="battlebtn"
+            id="playerOneBattleBtn"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark d-inline-block w-100 mt-3"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerOneBattleBtn"
+            ><i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </label>
         </div>
         <!-- Level counter -->
         <div class="d-flex justify-content-center mt-5 mobile-flex">
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
               </h6>
               <label for="level">
                 <input
@@ -195,6 +224,7 @@
                   min="1"
                   max="20"
                   placeholder="level"
+                  class="h-100 text-center"
                   oninput="calculateStrength()"
                 />
               </label>
@@ -204,7 +234,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved fa-2xl"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -214,7 +244,7 @@
                   min="1"
                   max="50"
                   placeholder="gear"
-                  placeholder="gear"
+                  class="h-100 text-center"
                   oninput="calculateStrength()"
                 />
               </label>
@@ -224,7 +254,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist fa-2xl"></i>
               </h6>
               <label for="strength">
                 <input
@@ -233,13 +263,14 @@
                   name="strength"
                   min="0"
                   max="100"
+                  class="h-100 text-center"
                 />
               </label>
             </div>
           </div>
         </div>
       </div>
-      <div id="player2" class="container-fluid mt-5 border border-light p-2 ">
+      <div id="player2" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 2</h3>
         <!-- color picker -->
         <label for="cardColorInputP2" class="form-label">Card color</label>
@@ -252,12 +283,18 @@
           title="Choose your color"
         />
         <div
-        class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-        <img id="hero-race-image-p2" class="text-dark mix-blend-mode" src="" alt="hero race image" />
-        <p id="img-label-p2" class="text-dark"></p>
+          <img
+            id="hero-race-image-p2"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image"
+          />
+          <p id="img-label-p2" class="text-dark"></p>
           <p id="img-text-p2" class="text-dark"></p>
-      </div>
+        </div>
         <div class="mt-3">
           <div>
             <div class="form-floating mb-3 text-dark">
@@ -276,11 +313,11 @@
                 aria-label="Race"
                 onchange="changeRaceImageP2(2)"
               >
-              <option disabled>Choose race</option>
-              <option id="elf" value="1">Elf</option>
-              <option id="hafling" value="2">Hafling</option>
-              <option id="dwarf" value="3">Dwarf</option>
-              <option selected value="4">Human</option>
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -291,11 +328,11 @@
                 aria-label="Class"
                 onchange="changeRaceImageP2(2)"
               >
-              <option selected value="0">Choose class</option>
-              <option id="cleric" value="1">Cleric</option>
-              <option id="thief" value="2">Thief</option>
-              <option id="warrior" value="3">Warrior</option>
-              <option id="wizard" value="4">Wizard</option>
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -320,7 +357,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            > <i class="fa-solid fa-venus"></i
+          >
+            <i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -333,7 +371,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            > <i class="fa-solid fa-mars"></i
+          >
+            <i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -341,7 +380,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -351,7 +390,7 @@
                   min="1"
                   max="20"
                   placeholder="level"
-                  oninput="calculateStrengthP2()"
+                  oninput="calculateStrengthP2(2)"
                 />
               </label>
             </div>
@@ -360,7 +399,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -370,7 +409,7 @@
                   min="1"
                   max="50"
                   placeholder="gear"
-                  oninput="calculateStrengthP2()"
+                  oninput="calculateStrengthP2(2)"
                 />
               </label>
             </div>
@@ -379,7 +418,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
@@ -394,7 +433,7 @@
           </div>
         </div>
       </div>
-      <div id="player3" class="container-fluid mt-5 border border-light p-2  ">
+      <div id="player3" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 3</h3>
         <!-- color picker -->
         <label for="cardColorInputP3" class="form-label">Card color</label>
@@ -407,9 +446,17 @@
           title="Choose your color"
         />
         <div
-        class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-        <img id="hero-race-image-p3" class="text-dark mix-blend-mode" src="" alt="hero race image" />
+          <img
+            id="hero-race-image-p3"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image"
+          />
+          <p id="img-label-p3" class="text-dark"></p>
+          <p id="img-text-p3" class="text-dark"></p>
         </div>
         <div class="mt-3">
           <div>
@@ -429,11 +476,11 @@
                 aria-label="Race"
                 onchange="changeRaceImageP3(3)"
               >
-              <option disabled>Choose race</option>
-              <option id="elf" value="1">Elf</option>
-              <option id="hafling" value="2">Hafling</option>
-              <option id="dwarf" value="3">Dwarf</option>
-              <option selected value="4">Human</option>
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -444,11 +491,11 @@
                 aria-label="Class"
                 onchange="changeRaceImageP3(3)"
               >
-              <option selected value="0">Choose class</option>
-              <option id="cleric" value="1">Cleric</option>
-              <option id="thief" value="2">Thief</option>
-              <option id="warrior" value="3">Warrior</option>
-              <option id="wizard" value="4">Wizard</option>
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -473,7 +520,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            > <i class="fa-solid fa-venus"></i
+          >
+            <i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -486,7 +534,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            > <i class="fa-solid fa-mars"></i
+          >
+            <i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -494,7 +543,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -513,7 +562,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -532,7 +581,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
@@ -547,7 +596,7 @@
           </div>
         </div>
       </div>
-      <div id="player4" class="container-fluid mt-5 border border-light p-2  ">
+      <div id="player4" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 4</h3>
         <!-- color picker -->
         <label for="cardColorInputP4" class="form-label">Card color</label>
@@ -560,9 +609,17 @@
           title="Choose your color"
         />
         <div
-        class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-          <img id="hero-race-image-p4" class="text-dark mix-blend-mode" src="" alt="hero image" />
+          <img
+            id="hero-race-image-p4"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p4" class="text-dark"></p>
+          <p id="img-text-p4" class="text-dark"></p>
         </div>
         <div class="mt-3">
           <div>
@@ -582,11 +639,11 @@
                 aria-label="Race"
                 onchange="changeRaceImageP4()"
               >
-              <option disabled>Choose race</option>
-              <option id="elf" value="1">Elf</option>
-              <option id="hafling" value="2">Hafling</option>
-              <option id="dwarf" value="3">Dwarf</option>
-              <option selected value="4">Human</option>
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -597,11 +654,11 @@
                 aria-label="Class"
                 onchange="changeRaceImageP4()"
               >
-              <option selected value="0">Choose class</option>
-              <option id="cleric" value="1">Cleric</option>
-              <option id="thief" value="2">Thief</option>
-              <option id="warrior" value="3">Warrior</option>
-              <option id="wizard" value="4">Wizard</option>
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -626,7 +683,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            > <i class="fa-solid fa-venus"></i
+          >
+            <i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -639,7 +697,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            > <i class="fa-solid fa-mars"></i
+          >
+            <i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -647,7 +706,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -666,7 +725,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -685,7 +744,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
@@ -700,7 +759,7 @@
           </div>
         </div>
       </div>
-      <div id="player5" class="container-fluid mt-5 border border-light p-2  ">
+      <div id="player5" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 5</h3>
         <!-- color picker -->
         <label for="cardColorInputP5" class="form-label">Card color</label>
@@ -713,9 +772,17 @@
           title="Choose your color"
         />
         <div
-        class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-          <img id="hero-race-image-p5" class="text-dark mix-blend-mode" src="" alt="hero image" />
+          <img
+            id="hero-race-image-p5"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p5" class="text-dark"></p>
+          <p id="img-text-p5" class="text-dark"></p>
         </div>
         <div class="mt-3">
           <div>
@@ -735,11 +802,11 @@
                 aria-label="Race"
                 onchange="changeRaceImageP5()"
               >
-              <option disabled>Choose race</option>
-              <option id="elf" value="1">Elf</option>
-              <option id="hafling" value="2">Hafling</option>
-              <option id="dwarf" value="3">Dwarf</option>
-              <option selected value="4">Human</option>
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -750,11 +817,11 @@
                 aria-label="Class"
                 onchange="changeRaceImageP5()"
               >
-              <option selected value="0">Choose class</option>
-              <option id="cleric" value="1">Cleric</option>
-              <option id="thief" value="2">Thief</option>
-              <option id="warrior" value="3">Warrior</option>
-              <option id="wizard" value="4">Wizard</option>
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -779,7 +846,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            > <i class="fa-solid fa-venus"></i
+          >
+            <i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -792,7 +860,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            > <i class="fa-solid fa-mars"></i
+          >
+            <i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -800,7 +869,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -819,7 +888,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -838,7 +907,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
@@ -853,7 +922,7 @@
           </div>
         </div>
       </div>
-      <div id="player6" class="container-fluid mt-5 border border-light p-2  ">
+      <div id="player6" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 6</h3>
         <!-- color picker -->
         <label for="cardColorInputP6" class="form-label">Card color</label>
@@ -866,9 +935,17 @@
           title="Choose your color"
         />
         <div
-        class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3" style="background-color: #faca99;"
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
         >
-          <img id="hero-race-image-p6" class="text-dark mix-blend-mode" src="" alt="hero image" />
+          <img
+            id="hero-race-image-p6"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p6" class="text-dark"></p>
+          <p id="img-text-p6" class="text-dark"></p>
         </div>
         <div class="mt-3">
           <div>
@@ -887,13 +964,12 @@
                 id="floatingSelectRacePlayerSix"
                 aria-label="Race"
                 onchange="changeRaceImageP6()"
-
               >
-              <option disabled>Choose race</option>
-              <option id="elf" value="1">Elf</option>
-              <option id="hafling" value="2">Hafling</option>
-              <option id="dwarf" value="3">Dwarf</option>
-              <option selected value="4">Human</option>
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
               <label for="floatingSelect">Race</label>
             </div>
@@ -904,11 +980,11 @@
                 aria-label="Class"
                 onchange="changeRaceImageP6()"
               >
-              <option selected value="0">Choose class</option>
-              <option id="cleric" value="1">Cleric</option>
-              <option id="thief" value="2">Thief</option>
-              <option id="warrior" value="3">Warrior</option>
-              <option id="wizard" value="4">Wizard</option>
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
               </select>
               <label for="floatingSelect">Class</label>
             </div>
@@ -933,7 +1009,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(67, 67, 241)"
             for="btnradio1"
-            > <i class="fa-solid fa-venus"></i
+          >
+            <i class="fa-solid fa-venus"></i
           ></label>
           <input
             type="radio"
@@ -946,7 +1023,8 @@
             class="btn btn-outline-dark"
             style="background-color: rgb(254, 122, 144)"
             for="btnradio2"
-            > <i class="fa-solid fa-mars"></i
+          >
+            <i class="fa-solid fa-mars"></i
           ></label>
         </div>
         <!-- Level counter -->
@@ -954,7 +1032,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
               </h6>
               <label for="level">
                 <input
@@ -973,7 +1051,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-shield-halved"></i>
               </h6>
               <label for="weapons">
                 <input
@@ -992,7 +1070,7 @@
           <div>
             <div class="d-flex justify-content-start">
               <h6 class="p-2">
-                 <i class="fa-solid fa-hand-fist"></i>
+                <i class="fa-solid fa-hand-fist"></i>
               </h6>
               <label for="strength">
                 <input
