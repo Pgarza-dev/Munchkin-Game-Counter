@@ -6,7 +6,11 @@ console.log("index.js loaded");
 function changeRaceImage(playerNumber) {
   const raceClasses = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -31,7 +35,11 @@ function changeRaceImage(playerNumber) {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -56,7 +64,11 @@ function changeRaceImage(playerNumber) {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -81,7 +93,11 @@ function changeRaceImage(playerNumber) {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -169,7 +185,11 @@ function changeRaceImage(playerNumber) {
 function changeRaceImageP2() {
   const raceClassesP2 = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -194,7 +214,40 @@ function changeRaceImageP2() {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
+      1: {
+        src: "images/elf-cleric.jpg",
+        text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
+        label: "Cleric",
+      },
+      2: {
+        src: "images/elf-thief.jpg",
+        text: "Backstab: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them. Theft: You may dicard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeds. Otherwise, you get whatcked an dlose a level.",
+        label: "Thief",
+      },
+      3: {
+        src: "images/elf-warrior.jpg",
+        text: "Berserking: You may discard up to three cards in any combat. Each card gives you a +1 bonus. You win ties in combat.",
+        label: "Warrior",
+      },
+      4: {
+        src: "images/human-wizard.jpg",
+        text: "Flight Spell: You may discard up to 3 cards after rolling the die to Run Away; each on gives you a +1 bonus to flee. Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasures, but don't gain levels. If there are other monsters in the combat, fight them normally.",
+        label: "Wizard",
+      },
+      // "5": { display: true }
+    },
+    2: {
+      // Add data for player two
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -219,7 +272,11 @@ function changeRaceImageP2() {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -244,7 +301,11 @@ function changeRaceImageP2() {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -331,7 +392,11 @@ function changeRaceImageP2() {
 function changeRaceImageP3(playerNumber) {
   const raceClassesP3 = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -356,7 +421,11 @@ function changeRaceImageP3(playerNumber) {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -381,7 +450,11 @@ function changeRaceImageP3(playerNumber) {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -406,7 +479,11 @@ function changeRaceImageP3(playerNumber) {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -493,7 +570,11 @@ function changeRaceImageP3(playerNumber) {
 function changeRaceImageP4(playerNumber) {
   const raceClassesP4 = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -518,7 +599,11 @@ function changeRaceImageP4(playerNumber) {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -543,7 +628,11 @@ function changeRaceImageP4(playerNumber) {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -568,7 +657,11 @@ function changeRaceImageP4(playerNumber) {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -655,7 +748,11 @@ function changeRaceImageP4(playerNumber) {
 function changeRaceImageP5(playerNumber) {
   const raceClassesP5 = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -680,7 +777,11 @@ function changeRaceImageP5(playerNumber) {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -705,7 +806,11 @@ function changeRaceImageP5(playerNumber) {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -730,7 +835,11 @@ function changeRaceImageP5(playerNumber) {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -817,7 +926,11 @@ function changeRaceImageP5(playerNumber) {
 function changeRaceImageP6(playerNumber) {
   const raceClassesP6 = {
     1: {
-      0: { src: "images/elf.jpg" },
+      0: {
+        src: "images/elf.jpg",
+        text: "+1 to Run Away. You go up a level for every monster you help someone kill.",
+        label: "Elf",
+      },
       1: {
         src: "images/elf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -842,7 +955,11 @@ function changeRaceImageP6(playerNumber) {
     },
     2: {
       // Add data for player two
-      0: { src: "images/hobbit-2.jpg" },
+      0: {
+        src: "images/hobbit-2.jpg",
+        text: "You may sell one item each turn for double price (other items are at normal price). If you fail you initial Run Away roll, you may discard a card and try once more.",
+        label: "Hobbit",
+      },
       1: {
         src: "images/hobbit-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -867,7 +984,11 @@ function changeRaceImageP6(playerNumber) {
     },
     3: {
       // Add data for player three
-      0: { src: "images/dwarf.jpg" },
+      0: {
+        src: "images/dwarf.jpg",
+        text: "You may carry any number of Big items. You may have 6 cards in your hand.",
+        label: "Dwarf",
+      },
       1: {
         src: "images/dwarf-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
@@ -892,7 +1013,11 @@ function changeRaceImageP6(playerNumber) {
     },
     4: {
       // Add data for player four
-      0: { src: "images/human.jpg" },
+      0: {
+        src: "images/human.jpg",
+        text: "Just an ordinary human.",
+        label: "Human",
+      },
       1: {
         src: "images/human-cleric.jpg",
         text: "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must thendicard one card from your hand for each card so drawn. Turning: You may dicard up to three cards in combat against an Undead creature. Each discard gives you a +3 bonus.",
