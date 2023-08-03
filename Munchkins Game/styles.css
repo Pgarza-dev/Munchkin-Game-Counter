@@ -23,9 +23,8 @@ img {
 /* .game-mode-container {
   width: 5rem;
 } */
-/* @media (max-width: 425px) {
-    .mobile-flex {
-        flex-direction: column;
-        align-items: start;      
+@media (max-width: 320px) {
+    .icon-display-none {
+        display: none;     
     }
-  } */
+  }
