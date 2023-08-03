@@ -26,19 +26,44 @@
     <!-- css -->
     <link rel="stylesheet" href="styles.css" />
     <!-- js -->
-    <script defer src="js/index.js"></script>
+    <script defer src="js/battle.js"></script>
   </head>
   <body
     class="bg-dark text-light pt-5 container-lg"
     style="font-family: Poppins"
   >
     <header>
-      <nav
+      <div class="container-fluid gap-2 align-items-center">
+        <div class="row">
+          <div class="col-8 d-inline-flex">
+            <a class="navbar-brand" href="index.html"
+              ><i class="fa-solid fa-arrow-left pt- pe-3"></i
+            ></a>
+            <h4>Monster Battle</h4>
+          </div>
+          <div class="col-4">
+            <div class="d-flex justify-content-end align-items-center">
+              <div>
+                <i class="fa-solid fa-dice fa-2xl pe-3"></i>
+              </div>
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <nav
         class="navbar navbar-expand-sm bg-dark border-bottom border-light fixed-top"
         data-bs-theme="dark"
       >
         <div class="container-fluid gap-2 align-items-center">
-          <a class="navbar-brand" href="#">Mucnkins Level Counter</a>
+          <a class="navbar-brand" href="index.html"><i class="fa-solid fa-arrow-left pe-5"></i>Battle</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -50,40 +75,92 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav m-auto mb-2 flex-grow-1">
-              <select
-                id="selectedNumber"
-                class="form-select m-1"
-                aria-label="Number of players"
-                onchange="changeNumberOfPlayers()"
-              >
-                <option selected>Players</option>
-                <option value="1">1 player</option>
-                <option value="2">2 players</option>
-                <option value="3">3 players</option>
-                <option value="4">4 players</option>
-                <option value="5">5 players</option>
-                <option value="6">6 players</option>
-              </select>
-
-              <select class="form-select m-1" aria-label="type of game">
-                <option selected>Game Mode</option>
-                <option class="fst-italic" value="1">
-                  Standard to level 10
-                </option>
-                <option class="fst-italic" value="2">Epic to level 20</option>
-              </select>
+        </div>
+      </nav> -->
+    </header>
+    <main class="container-fluid mt-5">
+      <div>
+        <div class="d-flex justify-content-center mb-2">
+          <h3 id="playerName">Player Name</h3>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-4">
+              <div class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2">
+                <h3>LEVEL</h3>
+                <div id="playerBattleLevel"></div>
+                <div>
+                  <button id="playerLevelUp" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-up"></i></button>
+                  <button id="playerlevelDown" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-down "></i></button>
+                </div>
+              </div>
+              
             </div>
-            <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
+            <div class="col-4">
+              <div class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2">
+                <h3>GEAR</h3>
+                <div id="playerGearLevel"></div>
+                <div>
+                  <button id="playerGearUp" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-up "></i></button>
+                  <button id="playerGearDown" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-down "></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2">
+                <h3>MODIFIER</h3>
+                <div id="playerModifierLevel"></div>
+                <div>
+                  <button id="playerModifierUp" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-up "></i></button>
+                  <button id="playerModifierDown" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-down "></i></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
-    <main>
-      <h1>Battle page</h1>
+      </div>
+      <!-- Battle Stats -->
+      <div>
+        <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+          <span id="playerTotalStrength" class="pe-3">Player Strength (1)</span>
+          <span>/</span>
+          <span id="monsterTotalStrength" class="ps-3">Monster Strength (1)</span>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <div class="d-flex justify-content-center mb-2">
+          <h3 id="monsterName">Monster 1</h3>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-6">
+              <div class="border-bottom d-flex justify-content-center flex-column align-items-center">
+                <h3>LEVEL</h3>
+                <div id="monsterLevel"></div>
+                <div>
+                  <button id="monsterModifierUp" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-up "></i></button>
+                  <button id="monsterModifierDown" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-down "></i></button>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="border-bottom d-flex justify-content-center flex-column align-items-center">
+                <h3>MODIFIER</h3>
+                <div id="monsterModifier"></div>
+                <div>
+                  <button id="monsterModifierUp" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-up "></i></button>
+                  <button id="monsterModifierDown" type="button" class="btn btn-dark"><i class="fa-solid fa-chevron-down "></i></button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer class="text-center mt-5">
+    <footer class="text-center mt-5 fixed-bottom">
       <div>
         <p>&copy; 2023 - All Rights Reserved by Muchkins Game Creators</p>
       </div>
