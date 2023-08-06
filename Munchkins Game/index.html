@@ -227,9 +227,8 @@
           <div class="row">
             <div class="col-4">
               <div
-                class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2"
+                class="d-flex justify-content-center flex-column align-items-center pt-2"
               >
-                <!-- <h3>LEVEL</h3> -->
                 <i
                   class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
                 ></i>
@@ -241,7 +240,7 @@
                       name="level"
                       min="1"
                       max="20"
-                      placeholder="level"
+                      placeholder="level 1"
                       class="h-100 text-center"
                       oninput="calculateStrength()"
                     />
@@ -263,7 +262,7 @@
             </div>
             <div class="col-4">
               <div
-                class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2"
+                class="d-flex justify-content-center flex-column align-items-center pt-2"
               >
                 <!-- <h3>GEAR</h3> -->
                 <i
@@ -299,7 +298,7 @@
             </div>
             <div class="col-4">
               <div
-                class="border-bottom d-flex justify-content-center flex-column align-items-center pt-2"
+                class="d-flex justify-content-center flex-column align-items-center pt-2"
               >
                 <!-- <h3>STRENGTH</h3> -->
                 <i
@@ -313,7 +312,7 @@
                       name="strength"
                       min="0"
                       max="100"
-                      class="h-100 text-center"
+                      class="h-100 text-center "
                     />
                   </label>
                 </div>
@@ -358,17 +357,29 @@
                     class="border-bottom d-flex justify-content-center flex-column align-items-center"
                   >
                     <h3>LEVEL</h3>
-                    <div id="monsterLevel"></div>
+                    <div>
+                      <label for="monsterLevel">
+                        <input
+                          type="number"
+                          id="monsterLevel"
+                          name="monsterLevel"
+                          min="1"
+                          max="100"
+                          class="h-100 text-center "
+                        />
+                      </label>
+                    </div>
+                    
                     <div>
                       <button
-                        id="monsterModifierUp"
+                        id="monsterLevelUp"
                         type="button"
                         class="btn btn-dark"
                       >
                         <i class="fa-solid fa-chevron-up"></i>
                       </button>
                       <button
-                        id="monsterModifierDown"
+                        id="monsterLevelDown"
                         type="button"
                         class="btn btn-dark"
                       >
@@ -382,7 +393,19 @@
                     class="border-bottom d-flex justify-content-center flex-column align-items-center"
                   >
                     <h3>MODIFIER</h3>
-                    <div id="monsterModifier"></div>
+                    <div>
+                      <label for="monsterModifier">
+                        <input
+                          type="number"
+                          id="monsterModifier"
+                          name="monsterModifier"
+                          min="0"
+                          max="100"
+                          class="h-100 text-center "
+                        />
+                      </label>
+                    </div>
+                    
                     <div>
                       <button
                         id="monsterModifierUp"

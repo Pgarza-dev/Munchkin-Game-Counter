@@ -1199,6 +1199,94 @@ function calculateStrength() {
 }
 calculateStrength();
 
+//BUTTONS FOR MONSTER LEVEL UP AND DOWN
+const monsterLevelUpButton = document.getElementById("monsterLevelUp");
+const monsterLevelDownButton = document.getElementById("monsterLevelDown");
+
+// Add event listeners to the buttons
+monsterLevelUpButton.addEventListener("click", increaseMonsterLevel);
+monsterLevelDownButton.addEventListener("click", decreaseMonsterLevel);
+
+function increaseMonsterLevel() {
+  let levelInput = document.getElementById("monsterLevel"); 
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);  
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+// Calculate strength whenever the level is changed
+calculateMonsterStrength();
+}
+
+function calculateMonsterStrength() {
+  let monsterLevel = parseInt(document.getElementById("monsterLevel").value) || 1;
+  let monsterModifier = parseInt(document.getElementById("monsterModifier").value) || 0;
+  let monsterStrength = monsterLevel + monsterModifier;
+  let monsterCombatStrength = document.getElementById("monsterTotalStrength");
+  monsterCombatStrength.innerHTML = monsterStrength;
+  document.getElementById("monsterTotalStrength").value = monsterStrength;
+}
+calculateMonsterStrength();
+
+
+function decreaseMonsterLevel() {
+  let levelInput = document.getElementById("monsterLevel");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateMonsterStrength();
+}
+
+//BUTTONS FOR MONSTER MODIFIER UP AND DOWN
+const monsterModifierUpButton = document.getElementById("monsterModifierUp");
+const monsterModifierDownButton = document.getElementById("monsterModifierDown");
+
+// Add event listeners to the buttons
+monsterModifierUpButton.addEventListener("click", increaseMonsterModifier);
+monsterModifierDownButton.addEventListener("click", decreaseMonsterModifier);
+
+function increaseMonsterModifier() {
+  let levelInput = document.getElementById("monsterModifier");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateMonsterStrength();
+}
+
+function decreaseMonsterModifier() {
+  let levelInput = document.getElementById("monsterModifier");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateMonsterStrength();
+}
+
+
 
 // CALCULATE STRENGTH PLAYER TWO
 function calculateStrengthP2() {
