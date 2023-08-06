@@ -30,6 +30,12 @@ img {
   transform: translateX(calc(var(--left) * -1)) translateY(calc(var(--top) * -1));
 }
 
+.combat-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 
 @media (max-width: 320px) {
     .icon-display-none {
