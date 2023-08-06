@@ -1111,13 +1111,94 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // CALCULATE STRENGTH PLAYER ONE
+// Buttons for "playerLevelUp" and "playerLevelDown" for player one
+const playerLevelUpButton = document.getElementById("playerLevelUp");
+const playerLevelDownButton = document.getElementById("playerlevelDown");
+
+// Add event listeners to the buttons
+playerLevelUpButton.addEventListener("click", increaseBattleLevel);
+playerLevelDownButton.addEventListener("click", decreaseBattleLevel);
+
+function increaseBattleLevel() {
+  let levelInput = document.getElementById("level");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrength();
+}
+
+function decreaseBattleLevel() {
+  let levelInput = document.getElementById("level");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrength();
+}
+
+
+
+// Buttons for "playerGearUp" and "playerGearDown" for player one
+const playerGearUpButton = document.getElementById("playerGearUp");
+const playerGearDownButton = document.getElementById("playerGearDown");
+
+// Add event listeners to the buttons
+playerGearUpButton.addEventListener("click", increaseLevel);
+playerGearDownButton.addEventListener("click", decreaseLevel);
+
+function increaseLevel() {
+  let levelInput = document.getElementById("weapons");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrength();
+}
+
+function decreaseLevel() {
+  let levelInput = document.getElementById("weapons");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrength();
+}
+
 function calculateStrength() {
   let level = parseInt(document.getElementById("level").value) || 1;
   let weapons = parseInt(document.getElementById("weapons").value) || 0;
   let strength = level + weapons;
+  let combatStrength = document.getElementById("playerTotalStrength");
+  combatStrength.innerHTML = strength;
   document.getElementById("strength").value = strength;
 }
 calculateStrength();
+
 
 // CALCULATE STRENGTH PLAYER TWO
 function calculateStrengthP2() {
@@ -1339,18 +1420,29 @@ btnRollDice.addEventListener("click", () => {
     }, 800);
 });
 
-
+// BATTLE BUTTON
 const battleBtn = document.getElementById("playerOneBattleBtn");
 const battleStats = document.getElementById("battleStats");
+const removeImg = document.getElementById("hero-race-image");
+const removeImgLabel = document.getElementById("img-label")
+const removeImgText = document.getElementById("img-text")
+const removeInputs = document.getElementById("form-inputs")
 battleBtn.addEventListener("click", function() {
   if (battleStats.classList.contains("d-none")) {
     battleStats.classList.remove("d-none");
     battleStats.classList.add("d-block");
+    removeImg.classList.add("d-none");
+    removeImgLabel.classList.add("d-none");
+    removeImgText.classList.add("d-none");
+    removeInputs.classList.add("d-none");
   } else {
     battleStats.classList.remove("d-block");
     battleStats.classList.add("d-none");
+    removeImg.classList.remove("d-none");
+    removeImgLabel.classList.remove("d-none");
+    removeImgText.classList.remove("d-none");
+    removeInputs.classList.remove("d-none");
   }
 });
-console.log(battleBtn);
 
 
