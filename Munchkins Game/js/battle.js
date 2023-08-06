@@ -1,5 +1,7 @@
 console.log("battle.js loaded");
 
+
+
 function createDice(number) {
 	const dotPositionMatrix = {
 		1: [

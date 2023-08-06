@@ -1259,3 +1259,98 @@ function changeNumberOfPlayers() {
   }
 }
 changeNumberOfPlayers();
+
+// DICE FUNCTION SECTION
+function createDice(number) {
+	const dotPositionMatrix = {
+		1: [
+			[50, 50]
+		],
+		2: [
+			[20, 20],
+			[80, 80]
+		],
+		3: [
+			[20, 20],
+			[50, 50],
+			[80, 80]
+		],
+		4: [
+			[20, 20],
+			[20, 80],
+			[80, 20],
+			[80, 80]
+		],
+		5: [
+			[20, 20],
+			[20, 80],
+			[50, 50],
+			[80, 20],
+			[80, 80]
+		],
+		6: [
+			[20, 20],
+			[20, 80],
+			[50, 20],
+			[50, 80],
+			[80, 20],
+			[80, 80]
+		]
+	};
+
+    const dice = document.createElement("div");
+    dice.classList.add("dice");
+
+    for (const dotPosition of dotPositionMatrix[number]) {
+        const dot = document.createElement("div");
+        dot.classList.add("dice-dot");
+        dot.style.setProperty("--top", dotPosition[0] + "%");
+        dot.style.setProperty("--left", dotPosition[1] + "%");
+        
+        dice.appendChild(dot);
+    }
+
+    return dice;
+}
+
+function randomizedDice(diceContainer, numberOfDice) {
+    diceContainer.innerHTML = "";
+
+    for (let i = 0; i < numberOfDice; i++) {
+        const dice = createDice(Math.floor(Math.random() * 6) + 1);
+        diceContainer.appendChild(dice);
+    }
+};
+
+const NUMBER_OF_DICE = 1;
+const diceContainer = document.querySelector(".dice-container");
+const btnRollDice = document.querySelector(".btn-roll-dice");
+
+randomizedDice(diceContainer, NUMBER_OF_DICE);
+
+btnRollDice.addEventListener("click", () => {
+    // randomizedDice(diceContainer, NUMBER_OF_DICE);
+    const interval = setInterval(() => {
+        randomizedDice(diceContainer, NUMBER_OF_DICE);
+    }, 50);
+
+    setTimeout(() => {
+        clearInterval(interval);
+    }, 800);
+});
+
+
+const battleBtn = document.getElementById("playerOneBattleBtn");
+const battleStats = document.getElementById("battleStats");
+battleBtn.addEventListener("click", function() {
+  if (battleStats.classList.contains("d-none")) {
+    battleStats.classList.remove("d-none");
+    battleStats.classList.add("d-block");
+  } else {
+    battleStats.classList.remove("d-block");
+    battleStats.classList.add("d-none");
+  }
+});
+console.log(battleBtn);
+
+
