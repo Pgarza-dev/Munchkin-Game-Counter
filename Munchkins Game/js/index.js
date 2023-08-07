@@ -1149,8 +1149,6 @@ function decreaseBattleLevel() {
   calculateStrength();
 }
 
-
-
 // Buttons for "playerGearUp" and "playerGearDown" for player one
 const playerGearUpButton = document.getElementById("playerGearUp");
 const playerGearDownButton = document.getElementById("playerGearDown");
@@ -1232,7 +1230,6 @@ function calculateMonsterStrength() {
 }
 calculateMonsterStrength();
 
-
 function decreaseMonsterLevel() {
   let levelInput = document.getElementById("monsterLevel");
   let currentLevel = parseInt(levelInput.value) || 1;
@@ -1285,8 +1282,6 @@ function decreaseMonsterModifier() {
   // Calculate strength whenever the level is changed
   calculateMonsterStrength();
 }
-
-
 
 // CALCULATE STRENGTH PLAYER TWO
 function calculateStrengthP2() {

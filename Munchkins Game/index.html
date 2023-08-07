@@ -197,13 +197,6 @@
           ></label>
         </div>
         <div class="mt-3">
-          <!-- <input
-            type="radio"
-            class="btn-check"
-            name="battlebtn"
-            
-            autocomplete="off"
-          /> -->
           <!-- Battle button -->
           <button
             id="playerOneBattleBtn"
@@ -312,11 +305,11 @@
                       name="strength"
                       min="0"
                       max="100"
-                      class="h-100 text-center "
+                      class="h-100 text-center"
                     />
                   </label>
                 </div>
-                <div>
+                <!-- <div>
                   <button
                     id="playerModifierUp"
                     type="button"
@@ -331,7 +324,7 @@
                   >
                     <i class="fa-solid fa-chevron-down"></i>
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -341,9 +334,13 @@
         <div id="battleStats" class="d-block d-none">
           <div>
             <div class="d-flex justify-content-center mt-5 mb-5 p-4">
-              <span id="playerTotalStrength" class="pe-3 combat-text">Player (1)</span>
+              <span id="playerTotalStrength" class="pe-3 combat-text"
+                >Player (1)</span
+              >
               <span class="combat-text">/</span>
-              <span id="monsterTotalStrength" class="ps-3 combat-text">Monster (1)</span>
+              <span id="monsterTotalStrength" class="ps-3 combat-text"
+                >Monster (1)</span
+              >
             </div>
           </div>
           <div class="mt-5">
@@ -365,11 +362,11 @@
                           name="monsterLevel"
                           min="1"
                           max="100"
-                          class="h-100 text-center "
+                          class="h-100 text-center"
                         />
                       </label>
                     </div>
-                    
+
                     <div>
                       <button
                         id="monsterLevelUp"
@@ -401,11 +398,11 @@
                           name="monsterModifier"
                           min="0"
                           max="100"
-                          class="h-100 text-center "
+                          class="h-100 text-center"
                         />
                       </label>
                     </div>
-                    
+
                     <div>
                       <button
                         id="monsterModifierUp"
@@ -534,79 +531,178 @@
             <i class="fa-solid fa-mars"></i
           ></label>
         </div>
+        <!-- Battle button -->
         <div class="mt-3">
-          <input
-            type="radio"
-            class="btn-check"
-            name="battlebtn"
-            id="playerTwoBattleBtn"
-            autocomplete="off"
-          />
-          <label
-            class="btn btn-outline-dark d-inline-block w-100 mt-3"
-            style="background-color: rgb(255, 255, 255)"
-            for="playerOneBattleBtn"
-            ><i class="fa-solid fa-khanda fa-2xl pt-4"></i>
-            <p class="d-inline-block fs-5 ms-2">Battle</p>
-          </label>
+          <button
+              id="p2BattleBtn"
+              type="button"
+              class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+              role="button"
+              style="background-color: rgb(255, 255, 255)"
+              for="p2BattleBtn"
+            >
+              <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+              <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
         </div>
-        <!-- Level counter -->
-        <div class="d-flex justify-content-center mt-5 mobile-flex">
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
-              </h6>
-              <label for="level">
-                <input
-                  type="number"
-                  id="levelP2"
-                  name="level"
-                  min="1"
-                  max="20"
-                  placeholder="level"
-                  class="h-100 text-center"
-                  oninput="calculateStrengthP2(2)"
-                />
-              </label>
+        
+          <!-- Level counter -->
+          <div class="d-flex justify-content-center mt-5 mobile-flex">
+            <div>
+              <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                
+                  <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
+                
+                <div id="p2BattleLevel">
+                  <label for="level">
+                    <input
+                      type="number"
+                      id="levelP2"
+                      name="level"
+                      min="1"
+                      max="20"
+                      placeholder="level"
+                      class="h-100 text-center"
+                      oninput="calculateStrengthP2(2)"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Gear counter -->
+            <div>
+              <div class="d-flex justify-content-start">
+                <h6 class="p-2">
+                  <i class="fa-solid fa-shield-halved fa-2xl"></i>
+                </h6>
+                <label for="weapons">
+                  <input
+                    type="number"
+                    id="weaponsP2"
+                    name="weapons"
+                    min="1"
+                    max="50"
+                    placeholder="gear"
+                    class="h-100 text-center"
+                    oninput="calculateStrengthP2(2)"
+                  />
+                </label>
+              </div>
+            </div>
+            
+            <!-- Strength counter -->
+            <div>
+              <div class="d-flex justify-content-start">
+                <h6 class="p-2">
+                  <i class="fa-solid fa-hand-fist fa-2xl"></i>
+                </h6>
+                <label for="strength">
+                  <input
+                    type="number"
+                    id="strengthP2"
+                    name="strength"
+                    min="0"
+                    max="100"
+                    class="h-100 text-center"
+                  />
+                </label>
+              </div>
             </div>
           </div>
-          <!-- Gear counter -->
+        </div>
+
+        <!-- Battle stats player 2-->
+        <div id="battleStatsP2" class="d-block d-none">
           <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-shield-halved fa-2xl"></i>
-              </h6>
-              <label for="weapons">
-                <input
-                  type="number"
-                  id="weaponsP2"
-                  name="weapons"
-                  min="1"
-                  max="50"
-                  placeholder="gear"
-                  class="h-100 text-center"
-                  oninput="calculateStrengthP2(2)"
-                />
-              </label>
+            <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+              <span id="player2TotalStrength" class="pe-3 combat-text"
+                >Player (1)</span
+              >
+              <span class="combat-text">/</span>
+              <span id="p2MonsterTotalStrength" class="ps-3 combat-text"
+                >Monster (1)</span
+              >
             </div>
           </div>
-          <!-- Strength counter -->
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-hand-fist fa-2xl"></i>
-              </h6>
-              <label for="strength">
-                <input
-                  type="number"
-                  id="strengthP2"
-                  name="strength"
-                  min="0"
-                  max="100"
-                  class="h-100 text-center"
-                />
-              </label>
+          <div class="mt-5">
+            <div class="d-flex justify-content-center mb-2">
+              <h3 id="">Monster 1</h3>
+            </div>
+            <div>
+              <div class="row">
+                <div class="col-6">
+                  <div
+                    class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                  >
+                    <h3>LEVEL</h3>
+                    <div>
+                      <label for="monsterLevel">
+                        <input
+                          type="number"
+                          id="p2monsterLevel"
+                          name="p2monsterLevel"
+                          min="1"
+                          max="100"
+                          class="h-100 text-center"
+                        />
+                      </label>
+                    </div>
+
+                    <div>
+                      <button
+                        id="p2MonsterLevelUp"
+                        type="button"
+                        class="btn btn-dark"
+                      >
+                        <i class="fa-solid fa-chevron-up"></i>
+                      </button>
+                      <button
+                        id="p2MonsterLevelDown"
+                        type="button"
+                        class="btn btn-dark"
+                      >
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                  >
+                    <h3>MODIFIER</h3>
+                    <div>
+                      <label for="monsterModifier">
+                        <input
+                          type="number"
+                          id="p2MonsterModifier"
+                          name="p2MonsterModifier"
+                          min="0"
+                          max="100"
+                          class="h-100 text-center"
+                        />
+                      </label>
+                    </div>
+
+                    <div>
+                      <button
+                        id="p2MonsterModifierUp"
+                        type="button"
+                        class="btn btn-dark"
+                      >
+                        <i class="fa-solid fa-chevron-up"></i>
+                      </button>
+                      <button
+                        id="p2MonsterModifierDown"
+                        type="button"
+                        class="btn btn-dark"
+                      >
+                        <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
