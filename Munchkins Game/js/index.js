@@ -1197,7 +1197,7 @@ function calculateStrength() {
 }
 calculateStrength();
 
-//BUTTONS FOR MONSTER LEVEL UP AND DOWN
+//BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER ONE
 const monsterLevelUpButton = document.getElementById("monsterLevelUp");
 const monsterLevelDownButton = document.getElementById("monsterLevelDown");
 
@@ -1245,7 +1245,7 @@ function decreaseMonsterLevel() {
   calculateMonsterStrength();
 }
 
-//BUTTONS FOR MONSTER MODIFIER UP AND DOWN
+//BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER ONE
 const monsterModifierUpButton = document.getElementById("monsterModifierUp");
 const monsterModifierDownButton = document.getElementById("monsterModifierDown");
 
@@ -1284,13 +1284,88 @@ function decreaseMonsterModifier() {
 }
 
 // CALCULATE STRENGTH PLAYER TWO
+const playerTwoLevelUpButton = document.getElementById("playerTwoLevelUp");
+const playerTwoLevelDownButton = document.getElementById("playerTwoLevelDown");
+
+// Add event listeners to the buttons player two
+playerTwoLevelUpButton.addEventListener("click", increaseLevelP2);  
+playerTwoLevelDownButton.addEventListener("click", decreaseLevelP2);
+
+function increaseLevelP2() {
+  let levelInput = document.getElementById("levelP2");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP2();
+}
+
+function decreaseLevelP2() {
+  let levelInput = document.getElementById("levelP2");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP2();
+}
+
 function calculateStrengthP2() {
   let level = parseInt(document.getElementById("levelP2").value) || 1;
-  let weapons = parseInt(document.getElementById("weaponsP2").value) || 0;
+  let weapons = parseInt(document.getElementById("weaponsPlayerTwo").value) || 0;
   let strength = level + weapons;
   document.getElementById("strengthP2").value = strength;
 }
 calculateStrengthP2();
+
+// Buttons for "playerGearUp" and "playerGearDown" for player two
+const playerTwoGearUpButton = document.getElementById("playerTwoGearUp");
+const playerTwoGearDownButton = document.getElementById("playerTwoGearDown");
+
+// Add event listeners to the buttons player two
+playerTwoGearUpButton.addEventListener("click", increaseGearP2);
+playerTwoGearDownButton.addEventListener("click", decreaseGearP2);
+
+function increaseGearP2() {
+  let gearInput = document.getElementById("weaponsPlayerTwo");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let maxGear = parseInt(gearInput.getAttribute("max")) || 20;
+
+  // Increment the current gear
+  currentGear = Math.min(currentGear + 1, maxGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP2();
+}
+
+function decreaseGearP2() {
+  let gearInput = document.getElementById("weaponsPlayerTwo");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let minGear = parseInt(gearInput.getAttribute("min")) || 0;
+
+  // Decrement the current gear
+  currentGear = Math.max(currentGear - 1, minGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP2();
+}
 
 // CALCULATE STRENGTH PLAYER THREE
 function calculateStrengthP3() {
