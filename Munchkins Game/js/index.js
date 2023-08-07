@@ -1578,7 +1578,8 @@ btnRollDice.addEventListener("click", () => {
     }, 800);
 });
 
-// BATTLE BUTTON
+// BATTLE BUTTON FUNCTION SECTION
+// PLAYER ONE BATTLE BUTTON
 const battleBtn = document.getElementById("playerOneBattleBtn");
 const battleStats = document.getElementById("battleStats");
 const removeImg = document.getElementById("hero-race-image");
@@ -1602,5 +1603,31 @@ battleBtn.addEventListener("click", function() {
     removeInputs.classList.remove("d-none");
   }
 });
+
+// PLAYER TWO BATTLE BUTTON
+const battleBtnTwo = document.getElementById("playerTwoBattleBtn");
+const battleStatsTwo = document.getElementById("battleStatsTwo");
+const removeImgPlayerTwo = document.getElementById("hero-race-image-p2")
+const removeImgLabelPlayerTwo = document.getElementById("img-label-p2")
+const removeImgTextPlayerTwo = document.getElementById("img-text-p2")
+const removeInputsPlayerTwo = document.getElementById("form-inputs-p2")
+battleBtnTwo.addEventListener("click", function() {
+  if (battleStatsTwo.classList.contains("d-none")) {
+    battleStatsTwo.classList.remove("d-none");
+    battleStatsTwo.classList.add("d-block");
+    removeImgPlayerTwo.classList.add("d-none");
+    removeImgLabelPlayerTwo.classList.add("d-none");
+    removeImgTextPlayerTwo.classList.add("d-none");
+    removeInputsPlayerTwo.classList.add("d-none");
+  } else {
+    battleStatsTwo.classList.remove("d-block");
+    battleStatsTwo.classList.add("d-none");
+    removeImgPlayerTwo.classList.remove("d-none");
+    removeImgLabelPlayerTwo.classList.remove("d-none");
+    removeImgTextPlayerTwo.classList.remove("d-none");
+    removeInputsPlayerTwo.classList.remove("d-none");
+  }
+});
+
 
 
