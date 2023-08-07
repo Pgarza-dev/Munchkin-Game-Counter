@@ -216,7 +216,7 @@
           </div>
         </div>
 
-        <div>
+        <!-- Battle level -->
           <div class="row">
             <div class="col-4">
               <div
@@ -547,12 +547,10 @@
         </div>
         
           <!-- Level counter -->
-          <div class="d-flex justify-content-center mt-5 mobile-flex">
-            <div>
+          <div class="row">
+            <div class="col-4">
               <div class="d-flex justify-content-center flex-column align-items-center pt-2">
-                
-                  <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
-                
+                  <i class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"></i>                
                 <div id="p2BattleLevel">
                   <label for="level">
                     <input
@@ -567,45 +565,69 @@
                     />
                   </label>
                 </div>
+                <div>
+                  <button id="playerLevelUp" type="button" class="btn btn-dark">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </button>
+                  <button
+                    id="playerlevelDown"
+                    type="button"
+                    class="btn btn-dark"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
               </div>
             </div>
             <!-- Gear counter -->
-            <div>
-              <div class="d-flex justify-content-start">
-                <h6 class="p-2">
-                  <i class="fa-solid fa-shield-halved fa-2xl"></i>
-                </h6>
-                <label for="weapons">
-                  <input
-                    type="number"
-                    id="weaponsP2"
-                    name="weapons"
-                    min="1"
-                    max="50"
-                    placeholder="gear"
-                    class="h-100 text-center"
-                    oninput="calculateStrengthP2(2)"
-                  />
-                </label>
+            <div class="col-4">
+              <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                  <i class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"></i>
+                <div id="p2GearLevel">
+                  <label for="weapons">
+                    <input
+                      type="number"
+                      id="weaponsP2"
+                      name="weapons"
+                      min="1"
+                      max="50"
+                      placeholder="gear"
+                      class="h-100 text-center"
+                      oninput="calculateStrengthP2(2)"
+                    />
+                    </label>
+                </div>
+                <div>
+                  <button id="p2GearUp" type="button" class="btn btn-dark">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </button>
+                  <button
+                    id="p2GearDown"
+                    type="button"
+                    class="btn btn-dark"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
               </div>
             </div>
             
             <!-- Strength counter -->
-            <div>
-              <div class="d-flex justify-content-start">
-                <h6 class="p-2">
-                  <i class="fa-solid fa-hand-fist fa-2xl"></i>
-                </h6>
-                <label for="strength">
-                  <input
-                    type="number"
-                    id="strengthP2"
-                    name="strength"
-                    min="0"
-                    max="100"
-                    class="h-100 text-center"
-                  />
-                </label>
+            <div class="col-4">
+              <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                  <i class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"></i>
+                <div id="p2ModifierLevel">
+                  <label for="strength">
+                    <input
+                      type="number"
+                      id="strengthP2"
+                      name="strength"
+                      min="0"
+                      max="100"
+                      class="h-100 text-center"
+                    />
+                  </label>
+                </div>
               </div>
             </div>
           </div>
