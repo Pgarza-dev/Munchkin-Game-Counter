@@ -1465,7 +1465,82 @@ function calculateStrengthP3() {
 }
 calculateStrengthP3();
 
+// BUTTONS FOR LEVEL UP AND DOWN PLAYER THREE
+const levelUpButtonP3 = document.getElementById("playerThreeLevelUp");
+const levelDownButtonP3 = document.getElementById("playerThreeLevelDown");
 
+// Add event listeners to the buttons player three
+levelUpButtonP3.addEventListener("click", increaseLevelP3);
+levelDownButtonP3.addEventListener("click", decreaseLevelP3);
+
+function increaseLevelP3() {
+  let levelInput = document.getElementById("levelP3");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP3();
+}
+
+function decreaseLevelP3() {
+  let levelInput = document.getElementById("levelP3");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP3();
+}
+
+const playerThreeGearUpButton = document.getElementById("playerThreeGearUp");
+const playerThreeGearDownButton = document.getElementById("playerThreeGearDown");
+
+// Add event listeners to the buttons player three
+playerThreeGearUpButton.addEventListener("click", increaseGearP3);
+playerThreeGearDownButton.addEventListener("click", decreaseGearP3);
+
+function increaseGearP3() {
+  let gearInput = document.getElementById("weaponsP3");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let maxGear = parseInt(gearInput.getAttribute("max")) || 20;
+
+  // Increment the current gear
+  currentGear = Math.min(currentGear + 1, maxGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP3();
+}
+
+function decreaseGearP3() {
+  let gearInput = document.getElementById("weaponsP3");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let minGear = parseInt(gearInput.getAttribute("min")) || 0;
+
+  // Decrement the current gear
+  currentGear = Math.max(currentGear - 1, minGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP3();
+}
+
+//BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER THREE
 
 // CALCULATE STRENGTH PLAYER FOUR
 function calculateStrengthP4() {
