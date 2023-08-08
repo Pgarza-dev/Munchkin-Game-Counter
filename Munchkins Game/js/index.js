@@ -1325,6 +1325,8 @@ function calculateStrengthP2() {
   let level = parseInt(document.getElementById("levelP2").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsPlayerTwo").value) || 0;
   let strength = level + weapons;
+  let combatStrength = document.getElementById("playerTwoTotalStrength");
+  combatStrength.innerHTML = strength;
   document.getElementById("strengthP2").value = strength;
 }
 calculateStrengthP2();
