@@ -1461,6 +1461,8 @@ function calculateStrengthP3() {
   let level = parseInt(document.getElementById("levelP3").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP3").value) || 0;
   let strength = level + weapons;
+  let combatStrength = document.getElementById("playerThreeTotalStrength");
+  combatStrength.innerHTML = strength;
   document.getElementById("strengthP3").value = strength;
 }
 calculateStrengthP3();
@@ -1503,6 +1505,7 @@ function decreaseLevelP3() {
   calculateStrengthP3();
 }
 
+// BUTTONS FOR GEAR UP AND DOWN PLAYER THREE
 const playerThreeGearUpButton = document.getElementById("playerThreeGearUp");
 const playerThreeGearDownButton = document.getElementById("playerThreeGearDown");
 
@@ -1541,6 +1544,95 @@ function decreaseGearP3() {
 }
 
 //BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER THREE
+const monsterLevelUpButtonPlayerThree = document.getElementById("playerThreeMonsterLevelUp");
+const monsterLevelDownButtonPlayerThree = document.getElementById("playerThreeMonsterLevelDown");
+
+// Add event listeners to the buttons player three
+monsterLevelUpButtonPlayerThree.addEventListener("click", increaseMonsterLevelP3);
+monsterLevelDownButtonPlayerThree.addEventListener("click", decreaseMonsterLevelP3);
+
+function increaseMonsterLevelP3() {
+  let monsterLevelInput = document.getElementById("playerThreeMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let maxMonsterLevel = parseInt(monsterLevelInput.getAttribute("max")) || 20;
+
+  // Increment the current monster level
+  currentMonsterLevel = Math.min(currentMonsterLevel + 1, maxMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerThreeMonsterStrength();
+}
+
+function decreaseMonsterLevelP3() {
+  let monsterLevelInput = document.getElementById("playerThreeMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let minMonsterLevel = parseInt(monsterLevelInput.getAttribute("min")) || 1;
+
+  // Decrement the current monster level
+  currentMonsterLevel = Math.max(currentMonsterLevel - 1, minMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerThreeMonsterStrength();
+}
+
+// BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER THREE  
+const monsterModifierUpButtonPlayerThree = document.getElementById("playerThreeMonsterModifierUp");
+const monsterModifierDownButtonPlayerThree = document.getElementById("playerThreeMonsterModifierDown");
+
+// Add event listeners to the buttons player three
+monsterModifierUpButtonPlayerThree.addEventListener("click", increaseMonsterModifierP3);
+monsterModifierDownButtonPlayerThree.addEventListener("click", decreaseMonsterModifierP3);
+
+function increaseMonsterModifierP3() {
+  let monsterModifierInput = document.getElementById("playerThreeMonsterModifier");
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let maxMonsterModifier = parseInt(monsterModifierInput.getAttribute("max")) || 20;
+
+  // Increment the current monster modifier
+  currentMonsterModifier = Math.min(currentMonsterModifier + 1, maxMonsterModifier);
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerThreeMonsterStrength();
+}
+
+function decreaseMonsterModifierP3() {
+  let monsterModifierInput = document.getElementById("playerThreeMonsterModifier");
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let minMonsterModifier = parseInt(monsterModifierInput.getAttribute("min")) || 0;
+
+  // Decrement the current monster modifier
+  currentMonsterModifier = Math.max(currentMonsterModifier - 1, minMonsterModifier);
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerThreeMonsterStrength();
+}
+
+// CALCULATE MONSTER STRENGTH PLAYER THREE
+function calculatePlayerThreeMonsterStrength() {
+  let monsterLevel = parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
+  let monsterModifier = parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
+  let monsterStrength = monsterLevel + monsterModifier;
+  let monsterCombatStrength = document.getElementById("playerThreeMonsterTotalStrength");
+  monsterCombatStrength.innerHTML = monsterStrength;
+  document.getElementById("playerThreeMonsterTotalStrength").value = monsterStrength;
+}
+calculatePlayerThreeMonsterStrength();
+
+
+
+
 
 // CALCULATE STRENGTH PLAYER FOUR
 function calculateStrengthP4() {
@@ -1792,6 +1884,31 @@ battleBtnTwo.addEventListener("click", function() {
     removeImgLabelPlayerTwo.classList.remove("d-none");
     removeImgTextPlayerTwo.classList.remove("d-none");
     removeInputsPlayerTwo.classList.remove("d-none");
+  }
+});
+
+// PLAYER THREE BATTLE BUTTON
+const battleBtnThree = document.getElementById("playerThreeBattleBtn");
+const battleStatsThree = document.getElementById("battleStatsThree");
+const removeImgPlayerThree = document.getElementById("hero-race-image-p3")
+const removeImgLabelPlayerThree = document.getElementById("img-label-p3")
+const removeImgTextPlayerThree = document.getElementById("img-text-p3")
+const removeInputsPlayerThree = document.getElementById("form-inputs-p3")
+battleBtnThree.addEventListener("click", function() {
+  if (battleStatsThree.classList.contains("d-none")) {
+    battleStatsThree.classList.remove("d-none");
+    battleStatsThree.classList.add("d-block");
+    removeImgPlayerThree.classList.add("d-none");
+    removeImgLabelPlayerThree.classList.add("d-none");
+    removeImgTextPlayerThree.classList.add("d-none");
+    removeInputsPlayerThree.classList.add("d-none");
+  } else {
+    battleStatsThree.classList.remove("d-block");
+    battleStatsThree.classList.add("d-none");
+    removeImgPlayerThree.classList.remove("d-none");
+    removeImgLabelPlayerThree.classList.remove("d-none");
+    removeImgTextPlayerThree.classList.remove("d-none");
+    removeInputsPlayerThree.classList.remove("d-none");
   }
 });
 
