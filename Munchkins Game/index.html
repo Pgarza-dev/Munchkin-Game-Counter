@@ -1133,21 +1133,19 @@
             <i class="fa-solid fa-mars"></i
           ></label>
         </div>
+        <!-- Battle button -->
         <div class="mt-3">
-          <input
-            type="radio"
-            class="btn-check"
-            name="battlebtn"
-            id="playerFourBattleBtn"
-            autocomplete="off"
-          />
-          <label
-            class="btn btn-outline-dark d-inline-block w-100 mt-3"
-            style="background-color: rgb(255, 255, 255)"
-            for="playerOneBattleBtn"
-            ><i class="fa-solid fa-khanda fa-2xl pt-4"></i>
-            <p class="d-inline-block fs-5 ms-2">Battle</p>
-          </label>
+          <button
+              id="playerFourBattleBtn"
+              type="button"
+              class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+              role="button"
+              style="background-color: rgb(255, 255, 255)"
+              for="playerFourBattleBtn"
+            >
+              <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+              <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
         </div>
         <!-- Level counter -->
         <div class="d-flex justify-content-center mt-5 mobile-flex">
@@ -1210,6 +1208,104 @@
           </div>
         </div>
       </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStatsFour" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerFourTotalStrength" class="pe-3 combat-text"
+              >1</span
+            >
+            <span class="combat-text">/</span>
+            <span id="playerFourMonsterTotalStrength" class="ps-3 combat-text"
+              >1</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="playerFourMonsterLevel">
+                      <input
+                        type="number"
+                        id="playerFourMonsterLevel"
+                        name="playerFourMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFourMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFourMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerFourMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerFourMonsterModifier"
+                        name="playerFourMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFourMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFourMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 5 -->
       <div id="player5" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 5</h3>
         <!-- color picker -->
