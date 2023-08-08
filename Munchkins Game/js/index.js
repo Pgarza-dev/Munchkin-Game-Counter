@@ -1206,23 +1206,25 @@ monsterLevelUpButton.addEventListener("click", increaseMonsterLevel);
 monsterLevelDownButton.addEventListener("click", decreaseMonsterLevel);
 
 function increaseMonsterLevel() {
-  let levelInput = document.getElementById("monsterLevel"); 
+  let levelInput = document.getElementById("monsterLevel");
   let currentLevel = parseInt(levelInput.value) || 1;
   let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
 
   // Increment the current level
-  currentLevel = Math.min(currentLevel + 1, maxLevel);  
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
 
   // Update the "LEVEL" input field
   levelInput.value = currentLevel;
 
-// Calculate strength whenever the level is changed
-calculateMonsterStrength();
+  // Calculate strength whenever the level is changed
+  calculateMonsterStrength();
 }
 
 function calculateMonsterStrength() {
-  let monsterLevel = parseInt(document.getElementById("monsterLevel").value) || 1;
-  let monsterModifier = parseInt(document.getElementById("monsterModifier").value) || 0;
+  let monsterLevel =
+    parseInt(document.getElementById("monsterLevel").value) || 1;
+  let monsterModifier =
+    parseInt(document.getElementById("monsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
   let monsterCombatStrength = document.getElementById("monsterTotalStrength");
   monsterCombatStrength.innerHTML = monsterStrength;
@@ -1247,7 +1249,9 @@ function decreaseMonsterLevel() {
 
 //BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER ONE
 const monsterModifierUpButton = document.getElementById("monsterModifierUp");
-const monsterModifierDownButton = document.getElementById("monsterModifierDown");
+const monsterModifierDownButton = document.getElementById(
+  "monsterModifierDown"
+);
 
 // Add event listeners to the buttons
 monsterModifierUpButton.addEventListener("click", increaseMonsterModifier);
@@ -1288,7 +1292,7 @@ const playerTwoLevelUpButton = document.getElementById("playerTwoLevelUp");
 const playerTwoLevelDownButton = document.getElementById("playerTwoLevelDown");
 
 // Add event listeners to the buttons player two
-playerTwoLevelUpButton.addEventListener("click", increaseLevelP2);  
+playerTwoLevelUpButton.addEventListener("click", increaseLevelP2);
 playerTwoLevelDownButton.addEventListener("click", decreaseLevelP2);
 
 function increaseLevelP2() {
@@ -1323,7 +1327,8 @@ function decreaseLevelP2() {
 
 function calculateStrengthP2() {
   let level = parseInt(document.getElementById("levelP2").value) || 1;
-  let weapons = parseInt(document.getElementById("weaponsPlayerTwo").value) || 0;
+  let weapons =
+    parseInt(document.getElementById("weaponsPlayerTwo").value) || 0;
   let strength = level + weapons;
   let combatStrength = document.getElementById("playerTwoTotalStrength");
   combatStrength.innerHTML = strength;
@@ -1370,12 +1375,19 @@ function decreaseGearP2() {
 }
 
 //BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER TWO
-const monsterLevelUpButtonPlayerTwo = document.getElementById("playerTwoMonsterLevelUp");
-const monsterLevelDownButtonPlayerTwo = document.getElementById("playerTwoMonsterLevelDown");
+const monsterLevelUpButtonPlayerTwo = document.getElementById(
+  "playerTwoMonsterLevelUp"
+);
+const monsterLevelDownButtonPlayerTwo = document.getElementById(
+  "playerTwoMonsterLevelDown"
+);
 
 // Add event listeners to the buttons player two
 monsterLevelUpButtonPlayerTwo.addEventListener("click", increaseMonsterLevelP2);
-monsterLevelDownButtonPlayerTwo.addEventListener("click", decreaseMonsterLevelP2);
+monsterLevelDownButtonPlayerTwo.addEventListener(
+  "click",
+  decreaseMonsterLevelP2
+);
 
 function increaseMonsterLevelP2() {
   let levelInput = document.getElementById("playerTwoMonsterLevel");
@@ -1409,22 +1421,37 @@ function decreaseMonsterLevelP2() {
 
 // CALCULATE STRENGTH MONSTER PLAYER TWO
 function calculatePlayerTwoMonsterStrength() {
-  let monsterLevel = parseInt(document.getElementById("playerTwoMonsterLevel").value) || 1;
-  let monsterModifier = parseInt(document.getElementById("playerTwoMonsterModifier").value) || 0;
+  let monsterLevel =
+    parseInt(document.getElementById("playerTwoMonsterLevel").value) || 1;
+  let monsterModifier =
+    parseInt(document.getElementById("playerTwoMonsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
-  let monsterCombatStrength = document.getElementById("playerTwoMonsterTotalStrength");
+  let monsterCombatStrength = document.getElementById(
+    "playerTwoMonsterTotalStrength"
+  );
   monsterCombatStrength.innerHTML = monsterStrength;
-  document.getElementById("playerTwoMonsterTotalStrength").value = monsterStrength;
+  document.getElementById("playerTwoMonsterTotalStrength").value =
+    monsterStrength;
 }
 calculatePlayerTwoMonsterStrength();
 
 // BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER TWO
-const monsterModifierUpButtonPlayerTwo = document.getElementById("playerTwoMonsterModifierUp");
-const monsterModifierDownButtonPlayerTwo = document.getElementById("playerTwoMonsterModifierDown");
+const monsterModifierUpButtonPlayerTwo = document.getElementById(
+  "playerTwoMonsterModifierUp"
+);
+const monsterModifierDownButtonPlayerTwo = document.getElementById(
+  "playerTwoMonsterModifierDown"
+);
 
 // Add event listeners to the buttons player two
-monsterModifierUpButtonPlayerTwo.addEventListener("click", increaseMonsterModifierP2);
-monsterModifierDownButtonPlayerTwo.addEventListener("click", decreaseMonsterModifierP2);
+monsterModifierUpButtonPlayerTwo.addEventListener(
+  "click",
+  increaseMonsterModifierP2
+);
+monsterModifierDownButtonPlayerTwo.addEventListener(
+  "click",
+  decreaseMonsterModifierP2
+);
 
 function increaseMonsterModifierP2() {
   let modifierInput = document.getElementById("playerTwoMonsterModifier");
@@ -1507,7 +1534,9 @@ function decreaseLevelP3() {
 
 // BUTTONS FOR GEAR UP AND DOWN PLAYER THREE
 const playerThreeGearUpButton = document.getElementById("playerThreeGearUp");
-const playerThreeGearDownButton = document.getElementById("playerThreeGearDown");
+const playerThreeGearDownButton = document.getElementById(
+  "playerThreeGearDown"
+);
 
 // Add event listeners to the buttons player three
 playerThreeGearUpButton.addEventListener("click", increaseGearP3);
@@ -1544,12 +1573,22 @@ function decreaseGearP3() {
 }
 
 //BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER THREE
-const monsterLevelUpButtonPlayerThree = document.getElementById("playerThreeMonsterLevelUp");
-const monsterLevelDownButtonPlayerThree = document.getElementById("playerThreeMonsterLevelDown");
+const monsterLevelUpButtonPlayerThree = document.getElementById(
+  "playerThreeMonsterLevelUp"
+);
+const monsterLevelDownButtonPlayerThree = document.getElementById(
+  "playerThreeMonsterLevelDown"
+);
 
 // Add event listeners to the buttons player three
-monsterLevelUpButtonPlayerThree.addEventListener("click", increaseMonsterLevelP3);
-monsterLevelDownButtonPlayerThree.addEventListener("click", decreaseMonsterLevelP3);
+monsterLevelUpButtonPlayerThree.addEventListener(
+  "click",
+  increaseMonsterLevelP3
+);
+monsterLevelDownButtonPlayerThree.addEventListener(
+  "click",
+  decreaseMonsterLevelP3
+);
 
 function increaseMonsterLevelP3() {
   let monsterLevelInput = document.getElementById("playerThreeMonsterLevel");
@@ -1581,21 +1620,37 @@ function decreaseMonsterLevelP3() {
   calculatePlayerThreeMonsterStrength();
 }
 
-// BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER THREE  
-const monsterModifierUpButtonPlayerThree = document.getElementById("playerThreeMonsterModifierUp");
-const monsterModifierDownButtonPlayerThree = document.getElementById("playerThreeMonsterModifierDown");
+// BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER THREE
+const monsterModifierUpButtonPlayerThree = document.getElementById(
+  "playerThreeMonsterModifierUp"
+);
+const monsterModifierDownButtonPlayerThree = document.getElementById(
+  "playerThreeMonsterModifierDown"
+);
 
 // Add event listeners to the buttons player three
-monsterModifierUpButtonPlayerThree.addEventListener("click", increaseMonsterModifierP3);
-monsterModifierDownButtonPlayerThree.addEventListener("click", decreaseMonsterModifierP3);
+monsterModifierUpButtonPlayerThree.addEventListener(
+  "click",
+  increaseMonsterModifierP3
+);
+monsterModifierDownButtonPlayerThree.addEventListener(
+  "click",
+  decreaseMonsterModifierP3
+);
 
 function increaseMonsterModifierP3() {
-  let monsterModifierInput = document.getElementById("playerThreeMonsterModifier");
+  let monsterModifierInput = document.getElementById(
+    "playerThreeMonsterModifier"
+  );
   let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
-  let maxMonsterModifier = parseInt(monsterModifierInput.getAttribute("max")) || 20;
+  let maxMonsterModifier =
+    parseInt(monsterModifierInput.getAttribute("max")) || 20;
 
   // Increment the current monster modifier
-  currentMonsterModifier = Math.min(currentMonsterModifier + 1, maxMonsterModifier);
+  currentMonsterModifier = Math.min(
+    currentMonsterModifier + 1,
+    maxMonsterModifier
+  );
 
   // Update the "MONSTER MODIFIER" input field
   monsterModifierInput.value = currentMonsterModifier;
@@ -1605,12 +1660,18 @@ function increaseMonsterModifierP3() {
 }
 
 function decreaseMonsterModifierP3() {
-  let monsterModifierInput = document.getElementById("playerThreeMonsterModifier");
+  let monsterModifierInput = document.getElementById(
+    "playerThreeMonsterModifier"
+  );
   let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
-  let minMonsterModifier = parseInt(monsterModifierInput.getAttribute("min")) || 0;
+  let minMonsterModifier =
+    parseInt(monsterModifierInput.getAttribute("min")) || 0;
 
   // Decrement the current monster modifier
-  currentMonsterModifier = Math.max(currentMonsterModifier - 1, minMonsterModifier);
+  currentMonsterModifier = Math.max(
+    currentMonsterModifier - 1,
+    minMonsterModifier
+  );
 
   // Update the "MONSTER MODIFIER" input field
   monsterModifierInput.value = currentMonsterModifier;
@@ -1621,18 +1682,19 @@ function decreaseMonsterModifierP3() {
 
 // CALCULATE MONSTER STRENGTH PLAYER THREE
 function calculatePlayerThreeMonsterStrength() {
-  let monsterLevel = parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
-  let monsterModifier = parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
+  let monsterLevel =
+    parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
+  let monsterModifier =
+    parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
-  let monsterCombatStrength = document.getElementById("playerThreeMonsterTotalStrength");
+  let monsterCombatStrength = document.getElementById(
+    "playerThreeMonsterTotalStrength"
+  );
   monsterCombatStrength.innerHTML = monsterStrength;
-  document.getElementById("playerThreeMonsterTotalStrength").value = monsterStrength;
+  document.getElementById("playerThreeMonsterTotalStrength").value =
+    monsterStrength;
 }
 calculatePlayerThreeMonsterStrength();
-
-
-
-
 
 // CALCULATE STRENGTH PLAYER FOUR
 function calculateStrengthP4() {
@@ -1759,65 +1821,63 @@ changeNumberOfPlayers();
 
 // DICE FUNCTION SECTION
 function createDice(number) {
-	const dotPositionMatrix = {
-		1: [
-			[50, 50]
-		],
-		2: [
-			[20, 20],
-			[80, 80]
-		],
-		3: [
-			[20, 20],
-			[50, 50],
-			[80, 80]
-		],
-		4: [
-			[20, 20],
-			[20, 80],
-			[80, 20],
-			[80, 80]
-		],
-		5: [
-			[20, 20],
-			[20, 80],
-			[50, 50],
-			[80, 20],
-			[80, 80]
-		],
-		6: [
-			[20, 20],
-			[20, 80],
-			[50, 20],
-			[50, 80],
-			[80, 20],
-			[80, 80]
-		]
-	};
+  const dotPositionMatrix = {
+    1: [[50, 50]],
+    2: [
+      [20, 20],
+      [80, 80],
+    ],
+    3: [
+      [20, 20],
+      [50, 50],
+      [80, 80],
+    ],
+    4: [
+      [20, 20],
+      [20, 80],
+      [80, 20],
+      [80, 80],
+    ],
+    5: [
+      [20, 20],
+      [20, 80],
+      [50, 50],
+      [80, 20],
+      [80, 80],
+    ],
+    6: [
+      [20, 20],
+      [20, 80],
+      [50, 20],
+      [50, 80],
+      [80, 20],
+      [80, 80],
+    ],
+  };
 
-    const dice = document.createElement("div");
-    dice.classList.add("dice");
+  const dice = document.createElement("div");
+  dice.classList.add("dice");
 
-    for (const dotPosition of dotPositionMatrix[number]) {
-        const dot = document.createElement("div");
-        dot.classList.add("dice-dot");
-        dot.style.setProperty("--top", dotPosition[0] + "%");
-        dot.style.setProperty("--left", dotPosition[1] + "%");
-        
-        dice.appendChild(dot);
-    }
+  for (const dotPosition of dotPositionMatrix[number]) {
+    const dot = document.createElement("div");
+    dot.classList.add("dice-dot");
+    dot.style.setProperty("--top", dotPosition[0] + "%");
+    dot.style.setProperty("--left", dotPosition[1] + "%");
 
-    return dice;
+    dice.appendChild(dot);
+  }
+
+  return dice;
 }
 
 function randomizedDice(diceContainer, numberOfDice) {
-    diceContainer.innerHTML = "";
+  diceContainer.innerHTML = "";
 
-    for (let i = 0; i < numberOfDice; i++) {
-        const dice = createDice(Math.floor(Math.random() * 6) + 1);
-        diceContainer.appendChild(dice);
-    }
-};
+  for (let i = 0; i < numberOfDice; i++) {
+    const dice = createDice(Math.floor(Math.random() * 6) + 1);
+    diceContainer.appendChild(dice);
+  }
+}
 
 const NUMBER_OF_DICE = 1;
 const diceContainer = document.querySelector(".dice-container");
@@ -1826,14 +1886,14 @@ const btnRollDice = document.querySelector(".btn-roll-dice");
 randomizedDice(diceContainer, NUMBER_OF_DICE);
 
 btnRollDice.addEventListener("click", () => {
-    // randomizedDice(diceContainer, NUMBER_OF_DICE);
-    const interval = setInterval(() => {
-        randomizedDice(diceContainer, NUMBER_OF_DICE);
-    }, 50);
+  // randomizedDice(diceContainer, NUMBER_OF_DICE);
+  const interval = setInterval(() => {
+    randomizedDice(diceContainer, NUMBER_OF_DICE);
+  }, 50);
 
-    setTimeout(() => {
-        clearInterval(interval);
-    }, 800);
+  setTimeout(() => {
+    clearInterval(interval);
+  }, 800);
 });
 
 // BATTLE BUTTON FUNCTION SECTION
@@ -1841,10 +1901,10 @@ btnRollDice.addEventListener("click", () => {
 const battleBtn = document.getElementById("playerOneBattleBtn");
 const battleStats = document.getElementById("battleStats");
 const removeImg = document.getElementById("hero-race-image");
-const removeImgLabel = document.getElementById("img-label")
-const removeImgText = document.getElementById("img-text")
-const removeInputs = document.getElementById("form-inputs")
-battleBtn.addEventListener("click", function() {
+const removeImgLabel = document.getElementById("img-label");
+const removeImgText = document.getElementById("img-text");
+const removeInputs = document.getElementById("form-inputs");
+battleBtn.addEventListener("click", function () {
   if (battleStats.classList.contains("d-none")) {
     battleStats.classList.remove("d-none");
     battleStats.classList.add("d-block");
@@ -1865,11 +1925,11 @@ battleBtn.addEventListener("click", function() {
 // PLAYER TWO BATTLE BUTTON
 const battleBtnTwo = document.getElementById("playerTwoBattleBtn");
 const battleStatsTwo = document.getElementById("battleStatsTwo");
-const removeImgPlayerTwo = document.getElementById("hero-race-image-p2")
-const removeImgLabelPlayerTwo = document.getElementById("img-label-p2")
-const removeImgTextPlayerTwo = document.getElementById("img-text-p2")
-const removeInputsPlayerTwo = document.getElementById("form-inputs-p2")
-battleBtnTwo.addEventListener("click", function() {
+const removeImgPlayerTwo = document.getElementById("hero-race-image-p2");
+const removeImgLabelPlayerTwo = document.getElementById("img-label-p2");
+const removeImgTextPlayerTwo = document.getElementById("img-text-p2");
+const removeInputsPlayerTwo = document.getElementById("form-inputs-p2");
+battleBtnTwo.addEventListener("click", function () {
   if (battleStatsTwo.classList.contains("d-none")) {
     battleStatsTwo.classList.remove("d-none");
     battleStatsTwo.classList.add("d-block");
@@ -1890,11 +1950,11 @@ battleBtnTwo.addEventListener("click", function() {
 // PLAYER THREE BATTLE BUTTON
 const battleBtnThree = document.getElementById("playerThreeBattleBtn");
 const battleStatsThree = document.getElementById("battleStatsThree");
-const removeImgPlayerThree = document.getElementById("hero-race-image-p3")
-const removeImgLabelPlayerThree = document.getElementById("img-label-p3")
-const removeImgTextPlayerThree = document.getElementById("img-text-p3")
-const removeInputsPlayerThree = document.getElementById("form-inputs-p3")
-battleBtnThree.addEventListener("click", function() {
+const removeImgPlayerThree = document.getElementById("hero-race-image-p3");
+const removeImgLabelPlayerThree = document.getElementById("img-label-p3");
+const removeImgTextPlayerThree = document.getElementById("img-text-p3");
+const removeInputsPlayerThree = document.getElementById("form-inputs-p3");
+battleBtnThree.addEventListener("click", function () {
   if (battleStatsThree.classList.contains("d-none")) {
     battleStatsThree.classList.remove("d-none");
     battleStatsThree.classList.add("d-block");
@@ -1911,6 +1971,3 @@ battleBtnThree.addEventListener("click", function() {
     removeInputsPlayerThree.classList.remove("d-none");
   }
 });
-
-
-
