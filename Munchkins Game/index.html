@@ -328,7 +328,7 @@
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
         <!-- BATTLE SECTION -->
         <div id="battleStats" class="d-block d-none">
@@ -425,7 +425,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
       <div id="player2" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 2</h3>
         <!-- color picker -->
@@ -641,7 +641,7 @@
                 >Player (1)</span
               >
               <span class="combat-text">/</span>
-              <span id="p2MonsterTotalStrength" class="ps-3 combat-text"
+              <span id="playerTwoMonsterTotalStrength" class="ps-3 combat-text"
                 >Monster (1)</span
               >
             </div>
@@ -661,8 +661,8 @@
                       <label for="monsterLevel">
                         <input
                           type="number"
-                          id="p2monsterLevel"
-                          name="p2monsterLevel"
+                          id="playerTwoMonsterLevel"
+                          name="playerTwoMonsterLevel"
                           min="1"
                           max="100"
                           class="h-100 text-center"
@@ -672,14 +672,14 @@
 
                     <div>
                       <button
-                        id="p2MonsterLevelUp"
+                        id="playerTwoMonsterLevelUp"
                         type="button"
                         class="btn btn-dark"
                       >
                         <i class="fa-solid fa-chevron-up"></i>
                       </button>
                       <button
-                        id="p2MonsterLevelDown"
+                        id="playerTwoMonsterLevelDown"
                         type="button"
                         class="btn btn-dark"
                       >
@@ -694,11 +694,11 @@
                   >
                     <h3>MODIFIER</h3>
                     <div>
-                      <label for="monsterModifier">
+                      <label for="playerTwoMonsterModifier">
                         <input
                           type="number"
-                          id="p2MonsterModifier"
-                          name="p2MonsterModifier"
+                          id="playerTwoMonsterModifier"
+                          name="playerTwoMonsterModifier"
                           min="0"
                           max="100"
                           class="h-100 text-center"
@@ -708,14 +708,14 @@
 
                     <div>
                       <button
-                        id="p2MonsterModifierUp"
+                        id="playerTwoMonsterModifierUp"
                         type="button"
                         class="btn btn-dark"
                       >
                         <i class="fa-solid fa-chevron-up"></i>
                       </button>
                       <button
-                        id="p2MonsterModifierDown"
+                        id="playerTwoMonsterModifierDown"
                         type="button"
                         class="btn btn-dark"
                       >
@@ -729,6 +729,8 @@
           </div>
         </div>
       </div>
+
+
       <div id="player3" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 3</h3>
         <!-- color picker -->
@@ -834,29 +836,25 @@
             <i class="fa-solid fa-mars"></i
           ></label>
         </div>
+        <!-- Battle button -->
         <div class="mt-3">
-          <input
-            type="radio"
-            class="btn-check"
-            name="battlebtn"
-            id="playerThreeBattleBtn"
-            autocomplete="off"
-          />
-          <label
-            class="btn btn-outline-dark d-inline-block w-100 mt-3"
-            style="background-color: rgb(255, 255, 255)"
-            for="playerOneBattleBtn"
-            ><i class="fa-solid fa-khanda fa-2xl pt-4"></i>
-            <p class="d-inline-block fs-5 ms-2">Battle</p>
-          </label>
+          <button
+              id="playerThreeBattleBtn"
+              type="button"
+              class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+              role="button"
+              style="background-color: rgb(255, 255, 255)"
+              for="playerThreeBattleBtn"
+            >
+              <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+              <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
         </div>
         <!-- Level counter -->
-        <div class="d-flex justify-content-center mt-5 mobile-flex">
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
-              </h6>
+        <div class="row">
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                <i class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"></i>
               <label for="level">
                 <input
                   type="number"
@@ -869,14 +867,24 @@
                   oninput="calculateStrengthP3()"
                 />
               </label>
+              <div>
+                <button id="playerThreeLevelUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                id="playerThreeLevelDown"
+                type="button"
+                class="btn btn-dark"
+                >
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
             </div>
           </div>
+          </div>
           <!-- Gear counter -->
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-shield-halved fa-2xl"></i>
-              </h6>
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                <i  class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4""></i>
               <label for="weapons">
                 <input
                   type="number"
@@ -889,14 +897,25 @@
                   oninput="calculateStrengthP3()"
                 />
               </label>
+              <div>
+                <button id="playerThreeGearUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerThreeGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
             </div>
           </div>
+
           <!-- Strength counter -->
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-hand-fist fa-2xl"></i>
-              </h6>
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+                <i class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"></i>              
               <label for="strength">
                 <input
                   type="number"
@@ -911,6 +930,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Player 4 -->
       <div id="player4" class="container-fluid mt-5 border border-light p-2">
         <h3>PLAYER 4</h3>
         <!-- color picker -->
