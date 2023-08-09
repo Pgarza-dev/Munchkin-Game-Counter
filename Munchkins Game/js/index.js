@@ -1682,8 +1682,10 @@ function decreaseMonsterModifierP3() {
 
 // CALCULATE MONSTER STRENGTH PLAYER THREE
 function calculatePlayerThreeMonsterStrength() {
-  let monsterLevel = parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
-  let monsterModifier = parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
+  let monsterLevel =
+    parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
+  let monsterModifier =
+    parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
   let monsterCombatStrength = document.getElementById(
     "playerThreeMonsterTotalStrength"
@@ -1706,7 +1708,9 @@ function calculateStrengthP4() {
 calculateStrengthP4();
 
 const levelUpButtonPlayerFour = document.getElementById("playerFourLevelUp");
-const levelDownButtonPlayerFour = document.getElementById("playerFourLevelDown");
+const levelDownButtonPlayerFour = document.getElementById(
+  "playerFourLevelDown"
+);
 
 // Add event listeners to the buttons player four
 levelUpButtonPlayerFour.addEventListener("click", increaseLevelP4);
@@ -1744,7 +1748,8 @@ function decreaseLevelP4() {
 
 // BUTTONS FOR GEAR UP AND DOWN PLAYER FOUR
 const weaponsUpButtonPlayerFour = document.getElementById("playerFourGearUp");
-const weaponsDownButtonPlayerFour = document.getElementById("playerFourGearDown");
+const weaponsDownButtonPlayerFour =
+  document.getElementById("playerFourGearDown");
 
 // Add event listeners to the buttons player four
 weaponsUpButtonPlayerFour.addEventListener("click", increaseWeaponsP4);
@@ -1784,12 +1789,15 @@ function decreaseWeaponsP4() {
 const monsterLevelUpButtonPlayerFour = document.getElementById(
   "playerFourMonsterLevelUp"
 );
-const monsterLevelDownButtonPlayerFour = document.getElementById( 
+const monsterLevelDownButtonPlayerFour = document.getElementById(
   "playerFourMonsterLevelDown"
 );
 
 // Add event listeners to the buttons player four
-monsterLevelUpButtonPlayerFour.addEventListener("click", increaseMonsterLevelP4);
+monsterLevelUpButtonPlayerFour.addEventListener(
+  "click",
+  increaseMonsterLevelP4
+);
 
 monsterLevelDownButtonPlayerFour.addEventListener(
   "click",
@@ -1888,19 +1896,19 @@ function decreaseMonsterModifierP4() {
 
 // CALCULATE MONSTER STRENGTH PLAYER FOUR
 function calculatePlayerFourMonsterStrength() {
-  let monsterLevel = parseInt(
-    document.getElementById("playerFourMonsterLevel").value) || 1;
-  let monsterModifier = parseInt(
-    document.getElementById("playerFourMonsterModifier").value) || 0;
+  let monsterLevel =
+    parseInt(document.getElementById("playerFourMonsterLevel").value) || 1;
+  let monsterModifier =
+    parseInt(document.getElementById("playerFourMonsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
-  let monsterCombatStrength = document.getElementById("playerFourMonsterTotalStrength"); 
+  let monsterCombatStrength = document.getElementById(
+    "playerFourMonsterTotalStrength"
+  );
   monsterCombatStrength.innerHTML = monsterStrength;
-  document.getElementById("playerFourMonsterTotalStrength").value = monsterStrength;
+  document.getElementById("playerFourMonsterTotalStrength").value =
+    monsterStrength;
 }
 calculatePlayerFourMonsterStrength();
-
-
-
 
 // CALCULATE STRENGTH PLAYER FIVE
 function calculateStrengthP5() {
