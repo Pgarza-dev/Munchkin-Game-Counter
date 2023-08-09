@@ -1682,10 +1682,8 @@ function decreaseMonsterModifierP3() {
 
 // CALCULATE MONSTER STRENGTH PLAYER THREE
 function calculatePlayerThreeMonsterStrength() {
-  let monsterLevel =
-    parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
-  let monsterModifier =
-    parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
+  let monsterLevel = parseInt(document.getElementById("playerThreeMonsterLevel").value) || 1;
+  let monsterModifier = parseInt(document.getElementById("playerThreeMonsterModifier").value) || 0;
   let monsterStrength = monsterLevel + monsterModifier;
   let monsterCombatStrength = document.getElementById(
     "playerThreeMonsterTotalStrength"
@@ -1701,9 +1699,208 @@ function calculateStrengthP4() {
   let level = parseInt(document.getElementById("levelP4").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP4").value) || 0;
   let strength = level + weapons;
+  let combatStrength = document.getElementById("playerFourTotalStrength");
+  combatStrength.innerHTML = strength;
   document.getElementById("strengthP4").value = strength;
 }
 calculateStrengthP4();
+
+const levelUpButtonPlayerFour = document.getElementById("playerFourLevelUp");
+const levelDownButtonPlayerFour = document.getElementById("playerFourLevelDown");
+
+// Add event listeners to the buttons player four
+levelUpButtonPlayerFour.addEventListener("click", increaseLevelP4);
+levelDownButtonPlayerFour.addEventListener("click", decreaseLevelP4);
+
+function increaseLevelP4() {
+  let levelInput = document.getElementById("levelP4");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP4();
+}
+
+function decreaseLevelP4() {
+  let levelInput = document.getElementById("levelP4");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP4();
+}
+
+// BUTTONS FOR GEAR UP AND DOWN PLAYER FOUR
+const weaponsUpButtonPlayerFour = document.getElementById("playerFourGearUp");
+const weaponsDownButtonPlayerFour = document.getElementById("playerFourGearDown");
+
+// Add event listeners to the buttons player four
+weaponsUpButtonPlayerFour.addEventListener("click", increaseWeaponsP4);
+weaponsDownButtonPlayerFour.addEventListener("click", decreaseWeaponsP4);
+
+function increaseWeaponsP4() {
+  let gearInput = document.getElementById("weaponsP4");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let maxGear = parseInt(gearInput.getAttribute("max")) || 20;
+
+  // Increment the current gear
+  currentGear = Math.min(currentGear + 1, maxGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP4();
+}
+
+function decreaseWeaponsP4() {
+  let gearInput = document.getElementById("weaponsP4");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let minGear = parseInt(gearInput.getAttribute("min")) || 0;
+
+  // Decrement the current gear
+  currentGear = Math.max(currentGear - 1, minGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP4();
+}
+
+//BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER FOUR
+const monsterLevelUpButtonPlayerFour = document.getElementById(
+  "playerFourMonsterLevelUp"
+);
+const monsterLevelDownButtonPlayerFour = document.getElementById( 
+  "playerFourMonsterLevelDown"
+);
+
+// Add event listeners to the buttons player four
+monsterLevelUpButtonPlayerFour.addEventListener("click", increaseMonsterLevelP4);
+
+monsterLevelDownButtonPlayerFour.addEventListener(
+  "click",
+  decreaseMonsterLevelP4
+);
+
+function increaseMonsterLevelP4() {
+  let monsterLevelInput = document.getElementById("playerFourMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let maxMonsterLevel = parseInt(monsterLevelInput.getAttribute("max")) || 20;
+
+  // Increment the current monster level
+  currentMonsterLevel = Math.min(currentMonsterLevel + 1, maxMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerFourMonsterStrength();
+}
+
+function decreaseMonsterLevelP4() {
+  let monsterLevelInput = document.getElementById("playerFourMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let minMonsterLevel = parseInt(monsterLevelInput.getAttribute("min")) || 1;
+
+  // Decrement the current monster level
+  currentMonsterLevel = Math.max(currentMonsterLevel - 1, minMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerFourMonsterStrength();
+}
+
+// BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER FOUR
+const monsterModifierUpButtonPlayerFour = document.getElementById(
+  "playerFourMonsterModifierUp"
+);
+const monsterModifierDownButtonPlayerFour = document.getElementById(
+  "playerFourMonsterModifierDown"
+);
+
+// Add event listeners to the buttons player four
+monsterModifierUpButtonPlayerFour.addEventListener(
+  "click",
+  increaseMonsterModifierP4
+);
+monsterModifierDownButtonPlayerFour.addEventListener(
+  "click",
+  decreaseMonsterModifierP4
+);
+
+function increaseMonsterModifierP4() {
+  let monsterModifierInput = document.getElementById(
+    "playerFourMonsterModifier"
+  );
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let maxMonsterModifier =
+    parseInt(monsterModifierInput.getAttribute("max")) || 20;
+
+  // Increment the current monster modifier
+  currentMonsterModifier = Math.min(
+    currentMonsterModifier + 1,
+    maxMonsterModifier
+  );
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerFourMonsterStrength();
+}
+
+function decreaseMonsterModifierP4() {
+  let monsterModifierInput = document.getElementById(
+    "playerFourMonsterModifier"
+  );
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let minMonsterModifier =
+    parseInt(monsterModifierInput.getAttribute("min")) || 0;
+
+  // Decrement the current monster modifier
+  currentMonsterModifier = Math.max(
+    currentMonsterModifier - 1,
+    minMonsterModifier
+  );
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerFourMonsterStrength();
+}
+
+// CALCULATE MONSTER STRENGTH PLAYER FOUR
+function calculatePlayerFourMonsterStrength() {
+  let monsterLevel = parseInt(
+    document.getElementById("playerFourMonsterLevel").value) || 1;
+  let monsterModifier = parseInt(
+    document.getElementById("playerFourMonsterModifier").value) || 0;
+  let monsterStrength = monsterLevel + monsterModifier;
+  let monsterCombatStrength = document.getElementById("playerFourMonsterTotalStrength"); 
+  monsterCombatStrength.innerHTML = monsterStrength;
+  document.getElementById("playerFourMonsterTotalStrength").value = monsterStrength;
+}
+calculatePlayerFourMonsterStrength();
+
+
+
 
 // CALCULATE STRENGTH PLAYER FIVE
 function calculateStrengthP5() {
@@ -1969,5 +2166,30 @@ battleBtnThree.addEventListener("click", function () {
     removeImgLabelPlayerThree.classList.remove("d-none");
     removeImgTextPlayerThree.classList.remove("d-none");
     removeInputsPlayerThree.classList.remove("d-none");
+  }
+});
+
+// PLAYER FOUR BATTLE BUTTON
+const battleBtnFour = document.getElementById("playerFourBattleBtn");
+const battleStatsFour = document.getElementById("battleStatsFour");
+const removeImgPlayerFour = document.getElementById("hero-race-image-p4");
+const removeImgLabelPlayerFour = document.getElementById("img-label-p4");
+const removeImgTextPlayerFour = document.getElementById("img-text-p4");
+const removeInputsPlayerFour = document.getElementById("form-inputs-p4");
+battleBtnFour.addEventListener("click", function () {
+  if (battleStatsFour.classList.contains("d-none")) {
+    battleStatsFour.classList.remove("d-none");
+    battleStatsFour.classList.add("d-block");
+    removeImgPlayerFour.classList.add("d-none");
+    removeImgLabelPlayerFour.classList.add("d-none");
+    removeImgTextPlayerFour.classList.add("d-none");
+    removeInputsPlayerFour.classList.add("d-none");
+  } else {
+    battleStatsFour.classList.remove("d-block");
+    battleStatsFour.classList.add("d-none");
+    removeImgPlayerFour.classList.remove("d-none");
+    removeImgLabelPlayerFour.classList.remove("d-none");
+    removeImgTextPlayerFour.classList.remove("d-none");
+    removeInputsPlayerFour.classList.remove("d-none");
   }
 });

@@ -124,7 +124,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputPlayerOne"
                 placeholder="Epic hero name"
               />
               <label for="floatingInput">Your epic hero name</label>
@@ -457,7 +457,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputPlayerTwo"
                 placeholder="Epic hero name"
               />
               <label for="floatingInput">Epic hero name</label>
@@ -762,7 +762,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputPlayerThree"
                 placeholder="Epic hero name"
               />
               <label for="floatingInput">Epic hero name</label>
@@ -1054,12 +1054,12 @@
           <p id="img-text-p4" class="text-dark"></p>
         </div>
         <div class="mt-3">
-          <div>
+          <div class="form-inputs-p4">
             <div class="form-floating mb-3 text-dark">
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputPlayerFour"
                 placeholder="Epic hero name"
               />
               <label for="floatingInput">Epic hero name</label>
@@ -1069,7 +1069,7 @@
                 class="form-select"
                 id="floatingSelectRacePlayerFour"
                 aria-label="Race"
-                onchange="changeRaceImageP4()"
+                onchange="changeRaceImageP4(4)"
               >
                 <option disabled>Choose race</option>
                 <option id="elf" value="1">Elf</option>
@@ -1165,7 +1165,10 @@
                 />
               </label>
               <div>
-                <button id="playerFourLevelUp" type="button" class="btn btn-dark">
+                <button 
+                id="playerFourLevelUp" 
+                type="button" 
+                class="btn btn-dark">
                   <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <button
@@ -1195,7 +1198,9 @@
                 />
               </label>
               <div>
-                <button id="playerFourGearUp" type="button" class="btn btn-dark">
+                <button id="playerFourGearUp" 
+                type="button" 
+                class="btn btn-dark">
                   <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <button
