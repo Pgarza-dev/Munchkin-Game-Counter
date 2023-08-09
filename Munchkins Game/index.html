@@ -1084,7 +1084,7 @@
           <p id="img-text-p4" class="text-dark"></p>
         </div>
         <div class="mt-3">
-          <div class="form-inputs-p4">
+          <div id="form-inputs-p4">
             <div class="form-floating mb-3 text-dark">
               <input
                 type="text"
@@ -1398,7 +1398,7 @@
           <p id="img-text-p5" class="text-dark"></p>
         </div>
         <div class="mt-3">
-          <div>
+          <div id="form-inputs-p5">
             <div class="form-floating mb-3 text-dark">
               <input
                 type="email"
@@ -1478,20 +1478,17 @@
           ></label>
         </div>
         <div class="mt-3">
-          <input
-            type="radio"
-            class="btn-check"
-            name="battlebtn"
+          <button
             id="playerFiveBattleBtn"
-            autocomplete="off"
-          />
-          <label
-            class="btn btn-outline-dark d-inline-block w-100 mt-3"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
             style="background-color: rgb(255, 255, 255)"
-            for="playerOneBattleBtn"
-            ><i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            for="playerFiveBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
             <p class="d-inline-block fs-5 ms-2">Battle</p>
-          </label>
+          </button>
         </div>
 
         <!-- Level counter -->
@@ -1517,14 +1514,14 @@
               </label>
               <div>
                 <button
-                  id="playerFiveGearUp"
+                  id="playerFiveLevelUp"
                   type="button"
                   class="btn btn-dark"
                 >
                   <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <button
-                  id="playerFiveGearDown"
+                  id="playerFiveLevelDown"
                   type="button"
                   class="btn btn-dark"
                 >
