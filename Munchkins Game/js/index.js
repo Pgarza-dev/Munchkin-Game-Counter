@@ -2407,3 +2407,28 @@ battleBtnFive.addEventListener("click", function () {
     removeInputsPlayerFive.classList.remove("d-none");
   }
 });
+
+// PLAYER SIX BATTLE BUTTON
+const battleBtnSix = document.getElementById("playerSixBattleBtn");
+const battleStatsSix = document.getElementById("battleStatsSix");
+const removeImgPlayerSix = document.getElementById("hero-race-image-p6")
+const removeImgLabelPlayerSix = document.getElementById("img-label-p6")
+const removeImgTextPlayerSix = document.getElementById("img-text-p6")
+const removeInputsPlayerSix = document.getElementById("form-inputs-p6")
+battleBtnSix.addEventListener("click", function () {
+  if (battleStatsSix.classList.contains("d-none")) {
+    battleStatsSix.classList.remove("d-none");
+    battleStatsSix.classList.add("d-block");
+    removeImgPlayerSix.classList.add("d-none");
+    removeImgLabelPlayerSix.classList.add("d-none");
+    removeImgTextPlayerSix.classList.add("d-none");
+    removeInputsPlayerSix.classList.add("d-none");
+  } else {
+    battleStatsSix.classList.remove("d-block");
+    battleStatsSix.classList.add("d-none");
+    removeImgPlayerSix.classList.remove("d-none");
+    removeImgLabelPlayerSix.classList.remove("d-none");
+    removeImgTextPlayerSix.classList.remove("d-none");
+    removeInputsPlayerSix.classList.remove("d-none");
+  }
+});
