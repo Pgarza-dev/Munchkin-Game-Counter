@@ -2084,30 +2084,181 @@ function calculatePlayerFiveMonsterStrength() {
 }
 calculatePlayerFiveMonsterStrength();
 
-  // function calculatePlayerTwoMonsterStrength() {
-  //   let monsterLevel =
-  //     parseInt(document.getElementById("playerTwoMonsterLevel").value) || 1;
-  //   let monsterModifier =
-  //     parseInt(document.getElementById("playerTwoMonsterModifier").value) || 0;
-  //   let monsterStrength = monsterLevel + monsterModifier;
-  //   let monsterCombatStrength = document.getElementById(
-  //     "playerTwoMonsterTotalStrength"
-  //   );
-  //   monsterCombatStrength.innerHTML = monsterStrength;
-  //   document.getElementById("playerTwoMonsterTotalStrength").value =
-  //     monsterStrength;
-  // }
-  // calculatePlayerTwoMonsterStrength();
-
 
 // CALCULATE STRENGTH PLAYER SIX
 function calculateStrengthP6() {
   let level = parseInt(document.getElementById("levelP6").value) || 1;
   let weapons = parseInt(document.getElementById("weaponsP6").value) || 0;
   let strength = level + weapons;
+  let combatStrength = document.getElementById("playerSixTotalStrength");
+  combatStrength.innerHTML = strength;
   document.getElementById("strengthP6").value = strength;
 }
 calculateStrengthP6();
+
+// BUTTONS FOR LEVEL UP AND DOWN PLAYER SIX
+const levelUpButtonPlayerSix = document.getElementById("playerSixLevelUp");
+const levelDownButtonPlayerSix = document.getElementById("playerSixLevelDown");
+
+// Add event listeners to the buttons player six
+levelUpButtonPlayerSix.addEventListener("click", increaseLevelP6);
+levelDownButtonPlayerSix.addEventListener("click", decreaseLevelP6);
+
+function increaseLevelP6() {
+  let levelInput = document.getElementById("levelP6");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
+
+  // Increment the current level
+  currentLevel = Math.min(currentLevel + 1, maxLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP6();
+}
+
+function decreaseLevelP6() {
+  let levelInput = document.getElementById("levelP6");
+  let currentLevel = parseInt(levelInput.value) || 1;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+
+  // Decrement the current level
+  currentLevel = Math.max(currentLevel - 1, minLevel);
+
+  // Update the "LEVEL" input field
+  levelInput.value = currentLevel;
+
+  // Calculate strength whenever the level is changed
+  calculateStrengthP6();
+}
+
+// BUTTONS FOR GEAR UP AND DOWN PLAYER SIX
+const gearUpButtonPlayerSix = document.getElementById("playerSixGearUp");
+const gearDownButtonPlayerSix = document.getElementById("playerSixGearDown");
+
+// Add event listeners to the buttons player six
+gearUpButtonPlayerSix.addEventListener("click", increaseGearP6);
+gearDownButtonPlayerSix.addEventListener("click", decreaseGearP6);
+
+function increaseGearP6() {
+  let gearInput = document.getElementById("weaponsP6");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let maxGear = parseInt(gearInput.getAttribute("max")) || 20;
+
+  // Increment the current gear
+  currentGear = Math.min(currentGear + 1, maxGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP6();
+}
+
+function decreaseGearP6() {
+  let gearInput = document.getElementById("weaponsP6");
+  let currentGear = parseInt(gearInput.value) || 0;
+  let minGear = parseInt(gearInput.getAttribute("min")) || 0;
+
+  // Decrement the current gear
+  currentGear = Math.max(currentGear - 1, minGear);
+
+  // Update the "GEAR" input field
+  gearInput.value = currentGear;
+
+  // Calculate strength whenever the gear is changed
+  calculateStrengthP6();
+}
+
+// BUTTONS FOR MONSTER LEVEL UP AND DOWN PLAYER SIX
+const monsterLevelUpButtonPlayerSix = document.getElementById("playerSixMonsterLevelUp");
+const monsterLevelDownButtonPlayerSix = document.getElementById("playerSixMonsterLevelDown");
+
+// Add event listeners to the buttons player six
+monsterLevelUpButtonPlayerSix.addEventListener("click", increaseMonsterLevelP6);
+monsterLevelDownButtonPlayerSix.addEventListener("click", decreaseMonsterLevelP6);
+
+function increaseMonsterLevelP6() {
+  let monsterLevelInput = document.getElementById("playerSixMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let maxMonsterLevel = parseInt(monsterLevelInput.getAttribute("max")) || 20;
+
+  // Increment the current monster level
+  currentMonsterLevel = Math.min(currentMonsterLevel + 1, maxMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerSixMonsterStrength();
+}
+
+function decreaseMonsterLevelP6() {
+  let monsterLevelInput = document.getElementById("playerSixMonsterLevel");
+  let currentMonsterLevel = parseInt(monsterLevelInput.value) || 1;
+  let minMonsterLevel = parseInt(monsterLevelInput.getAttribute("min")) || 1;
+
+  // Decrement the current monster level
+  currentMonsterLevel = Math.max(currentMonsterLevel - 1, minMonsterLevel);
+
+  // Update the "MONSTER LEVEL" input field
+  monsterLevelInput.value = currentMonsterLevel;
+
+  // Calculate strength whenever the monster level is changed
+  calculatePlayerSixMonsterStrength();
+}
+
+// BUTTONS FOR MONSTER MODIFIER UP AND DOWN PLAYER SIX
+const monsterModifierUpButtonPlayerSix = document.getElementById("playerSixMonsterModifierUp");
+const monsterModifierDownButtonPlayerSix = document.getElementById("playerSixMonsterModifierDown");
+
+// Add event listeners to the buttons player six
+monsterModifierUpButtonPlayerSix.addEventListener("click", increaseMonsterModifierP6);
+monsterModifierDownButtonPlayerSix.addEventListener("click", decreaseMonsterModifierP6);
+
+function increaseMonsterModifierP6() {
+  let monsterModifierInput = document.getElementById("playerSixMonsterModifier");
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let maxMonsterModifier = parseInt(monsterModifierInput.getAttribute("max")) || 20;
+
+  // Increment the current monster modifier
+  currentMonsterModifier = Math.min(currentMonsterModifier + 1, maxMonsterModifier);
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerSixMonsterStrength();
+}
+
+function decreaseMonsterModifierP6() {
+  let monsterModifierInput = document.getElementById("playerSixMonsterModifier");
+  let currentMonsterModifier = parseInt(monsterModifierInput.value) || 0;
+  let minMonsterModifier = parseInt(monsterModifierInput.getAttribute("min")) || 0;
+
+  // Decrement the current monster modifier
+  currentMonsterModifier = Math.max(currentMonsterModifier - 1, minMonsterModifier);
+
+  // Update the "MONSTER MODIFIER" input field
+  monsterModifierInput.value = currentMonsterModifier;
+
+  // Calculate strength whenever the monster modifier is changed
+  calculatePlayerSixMonsterStrength();
+}
+
+// CALCULATE MONSTER STRENGTH PLAYER SIX
+function calculatePlayerSixMonsterStrength() {
+  let monsterLevel = parseInt(document.getElementById("playerSixMonsterLevel").value) || 1;
+  let monsterModifier = parseInt(document.getElementById("playerSixMonsterModifier").value) || 0;
+  let monsterStrength = monsterLevel + monsterModifier;
+  let monsterCombatStrength = document.getElementById("playerSixMonsterTotalStrength");
+  monsterCombatStrength.innerHTML = monsterStrength;
+  document.getElementById("playerSixMonsterTotalStrength").value = monsterStrength;
+}
+calculatePlayerSixMonsterStrength();
+
 
 // CARD COLOR PER PLAYER
 function changeCardColor() {
@@ -2282,7 +2433,7 @@ btnRollDice.addEventListener("click", () => {
   }, 800);
 });
 
-// BATTLE BUTTON FUNCTION SECTION
+// BATTLE BUTTON FUNCTION SECTION FOR EACH PLAYER
 // PLAYER ONE BATTLE BUTTON
 const battleBtn = document.getElementById("playerOneBattleBtn");
 const battleStats = document.getElementById("battleStats");

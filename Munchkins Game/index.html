@@ -1808,12 +1808,12 @@
         </div>
 
         <!-- Level counter -->
-        <div class="d-flex justify-content-center mt-5 mobile-flex">
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i>
-              </h6>
+        <div class="row">
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+              <i
+              class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+            ></i>
               <label for="level">
                 <input
                   type="number"
@@ -1826,34 +1826,66 @@
                   oninput="calculateStrengthP6()"
                 />
               </label>
+              <div>
+                <button
+                  id="playerSixLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerSixLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
             </div>
           </div>
           <!-- Gear counter -->
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-shield-halved fa-2xl"></i>
-              </h6>
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+              <i
+              class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+            ></i>
               <label for="weapons">
                 <input
                   type="number"
                   id="weaponsP6"
                   name="weapons"
-                  min="1"
-                  max="50"
+                  min="0"
+                  max="100"
                   placeholder="gear"
                   class="h-100 text-center"
                   oninput="calculateStrengthP6()"
                 />
               </label>
+              <div>
+                <button
+                  id="playerSixGearUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerSixGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
             </div>
           </div>
           <!-- Strength counter -->
-          <div>
-            <div class="d-flex justify-content-start">
-              <h6 class="p-2">
-                <i class="fa-solid fa-hand-fist fa-2xl"></i>
-              </h6>
+          <div class="col-4">
+            <div class="d-flex justify-content-center flex-column align-items-center pt-2">
+              <i
+              class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+            ></i>
               <label for="strength">
                 <input
                   type="number"
