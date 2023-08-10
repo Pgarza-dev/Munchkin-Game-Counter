@@ -36,6 +36,13 @@ img {
   color: #fff;
 }
 
+input {
+  background-color: #212529;
+  color: white;
+  border: none;
+  font-size: 2rem;
+}
+
 
 @media (max-width: 320px) {
     .icon-display-none {

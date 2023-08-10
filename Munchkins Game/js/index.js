@@ -2430,7 +2430,7 @@ btnRollDice.addEventListener("click", () => {
 
   setTimeout(() => {
     clearInterval(interval);
-  }, 800);
+  }, 1000);
 });
 
 // BATTLE BUTTON FUNCTION SECTION FOR EACH PLAYER
