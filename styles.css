@@ -1,0 +1,51 @@
+
+img {
+  height: 200px;
+  width: 200px;
+}
+.mix-blend-mode {
+  mix-blend-mode: multiply;
+}
+
+.dice {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.dice-dot {
+  --top: 0%;
+  --left: 0%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  transform: translateX(calc(var(--left) * -1)) translateY(calc(var(--top) * -1));
+}
+
+.combat-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+input {
+  background-color: #212529;
+  color: white;
+  border: none;
+  font-size: 2rem;
+}
+
+
+@media (max-width: 320px) {
+    .icon-display-none {
+        display: none;     
+    }
+  }

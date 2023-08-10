@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Munchkins Level Counter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!-- Goofle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a6b44b4960.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- js -->
+    <script defer src="js/index.js"></script>
+  </head>
+  <body
+    class="bg-dark text-light pt-5 container-lg"
+    style="font-family: Roboto"
+  >
+    <header>
+      <nav
+        class="navbar navbar-expand-sm bg-dark border-bottom border-light fixed-top"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid gap-2 align-items-center">
+          <a class="navbar-brand" href="#">Mucnkins Level Counter</a>
+          <div class="ms-3 me-3">
+            <i
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="btn-roll-dice mt-3 fa-solid fa-dice fa-2xl pe-3"
+            ></i>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav m-auto mb-2 flex-grow-1">
+              <select
+                id="selectedNumber"
+                class="form-select m-1"
+                aria-label="Number of players"
+                onchange="changeNumberOfPlayers()"
+              >
+                <option selected>Players</option>
+                <option value="1">1 player</option>
+                <option value="2">2 players</option>
+                <option value="3">3 players</option>
+                <option value="4">4 players</option>
+                <option value="5">5 players</option>
+                <option value="6">6 players</option>
+              </select>
+
+              <select class="form-select m-1" aria-label="type of game">
+                <option selected>Game Mode</option>
+                <option class="fst-italic" value="1">
+                  Standard to level 10
+                </option>
+                <option class="fst-italic" value="2">Epic to level 20</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Button trigger modal -->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-body">
+            <div class="dice-container d-flex justify-content-center">
+              <div class="dice">
+                <div class="dice-dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero profile -->
+      <div id="card" class="container-fluid mt-5 border border-light p-2">
+        <!-- color picker -->
+        <div class="d-flex justify-content-between flex-row-reverse">
+          <h3>Player 1</h3>
+          <div class="d-flex align-items-start">
+            <label for="cardColorInput" class="form-label"></label>
+            <input
+              type="color"
+              class="form-control form-control-color p-0"
+              onchange="changeCardColor()"
+              id="cardColorInput"
+              value="#212529"
+              title="Choose your color"
+            />
+
+            <div class="ms-2">
+              <p>Card Color</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image "
+          />
+          <p id="img-label" class="text-dark"></p>
+          <p id="img-text" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputPlayerOne"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Your epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerOne"
+                aria-label="Race"
+                onchange="changeRaceImage()"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected id="human" value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerOne"
+                aria-label="Class"
+                onchange="changeRaceImage()"
+              >
+                <option selected value="0">No class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+            ><i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+            ><i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <div class="mt-3">
+          <!-- Battle button -->
+          <button
+            id="playerOneBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerOneBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+
+        <!-- Battle level -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <div id="playerBattleLevel">
+                <label for="level">
+                  <input
+                    type="number"
+                    id="level"
+                    name="level"
+                    min="0"
+                    max="20"
+                    placeholder="level 1"
+                    class="h-100 text-center"
+                    oninput="calculateStrength()"
+                  />
+                </label>
+              </div>
+              <div>
+                <button id="playerLevelUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button id="playerlevelDown" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <!-- <h3>GEAR</h3> -->
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <div id="playerGearLevel">
+                <label for="weapons">
+                  <input
+                    type="number"
+                    id="weapons"
+                    name="weapons"
+                    min="0"
+                    max="100"
+                    placeholder="gear"
+                    class="h-100 text-center"
+                    oninput="calculateStrength()"
+                  />
+                </label>
+              </div>
+              <div>
+                <button id="playerGearUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button id="playerGearDown" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <!-- <h3>STRENGTH</h3> -->
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <div id="playerModifierLevel">
+                <label for="strength">
+                  <input
+                    type="number"
+                    id="strength"
+                    name="strength"
+                    min="0"
+                    max="100"
+                    class="h-100 text-center"
+                  />
+                </label>
+              </div>
+              <!-- <div>
+                  <button
+                    id="playerModifierUp"
+                    type="button"
+                    class="btn btn-dark"
+                  >
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </button>
+                  <button
+                    id="playerModifierDown"
+                    type="button"
+                    class="btn btn-dark"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStats" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerTotalStrength" class="pe-3 combat-text"
+              >Player (1)</span
+            >
+            <span class="combat-text">/</span>
+            <span id="monsterTotalStrength" class="ps-3 combat-text"
+              >Monster (1)</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="monsterLevel">
+                      <input
+                        type="number"
+                        id="monsterLevel"
+                        name="monsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="monsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="monsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="monsterModifier">
+                      <input
+                        type="number"
+                        id="monsterModifier"
+                        name="monsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="monsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="monsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player Two -->
+      <div id="player2" class="container-fluid mt-5 border border-light p-2">
+        <h3>PLAYER 2</h3>
+        <!-- color picker -->
+        <label for="cardColorInputP2" class="form-label">Card color</label>
+        <input
+          type="color"
+          class="form-control form-control-color p-0"
+          onchange="changeCardColor()"
+          id="cardColorInputP2"
+          value="#212529"
+          title="Choose your color"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image-p2"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image"
+          />
+          <p id="img-label-p2" class="text-dark"></p>
+          <p id="img-text-p2" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs-p2">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputPlayerTwo"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerTwo"
+                aria-label="Race"
+                onchange="changeRaceImageP2(2)"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerTwo"
+                aria-label="Class"
+                onchange="changeRaceImageP2(2)"
+              >
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+          >
+            <i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+          >
+            <i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <!-- Battle button -->
+        <div class="mt-3">
+          <button
+            id="playerTwoBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerTwoBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+
+        <!-- Level counter -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <div id="p2BattleLevel">
+                <label for="level">
+                  <input
+                    type="number"
+                    id="levelP2"
+                    name="level"
+                    min="1"
+                    max="20"
+                    placeholder="level"
+                    class="h-100 text-center"
+                    oninput="calculateStrengthP2(2)"
+                  />
+                </label>
+              </div>
+              <div>
+                <button
+                  id="playerTwoLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerTwoLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Gear counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <div id="p2GearLevel">
+                <label for="weapons">
+                  <input
+                    type="number"
+                    id="weaponsPlayerTwo"
+                    name="weapons"
+                    min="0"
+                    max="100"
+                    placeholder="gear"
+                    class="h-100 text-center"
+                    oninput="calculateStrengthP2(2)"
+                  />
+                </label>
+              </div>
+              <div>
+                <button id="playerTwoGearUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerTwoGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strength counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <div id="p2ModifierLevel">
+                <label for="strength">
+                  <input
+                    type="number"
+                    id="strengthP2"
+                    name="strength"
+                    min="0"
+                    max="100"
+                    class="h-100 text-center"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Battle stats player 2-->
+      <div id="battleStatsTwo" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerTwoTotalStrength" class="pe-3 combat-text"
+              >Player (1)</span
+            >
+            <span class="combat-text">/</span>
+            <span id="playerTwoMonsterTotalStrength" class="ps-3 combat-text"
+              >Monster (1)</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="monsterLevel">
+                      <input
+                        type="number"
+                        id="playerTwoMonsterLevel"
+                        name="playerTwoMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerTwoMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerTwoMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerTwoMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerTwoMonsterModifier"
+                        name="playerTwoMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerTwoMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerTwoMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 3 -->
+      <div id="player3" class="container-fluid mt-5 border border-light p-2">
+        <h3>PLAYER 3</h3>
+        <!-- color picker -->
+        <label for="cardColorInputP3" class="form-label">Card color</label>
+        <input
+          type="color"
+          class="form-control form-control-color p-0"
+          onchange="changeCardColor()"
+          id="cardColorInputP3"
+          value="#212529"
+          title="Choose your color"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image-p3"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero race image"
+          />
+          <p id="img-label-p3" class="text-dark"></p>
+          <p id="img-text-p3" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs-p3">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputPlayerThree"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerThree"
+                aria-label="Race"
+                onchange="changeRaceImageP3(3)"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerThree"
+                aria-label="Class"
+                onchange="changeRaceImageP3(3)"
+              >
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+          >
+            <i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+          >
+            <i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <!-- Battle button -->
+        <div class="mt-3">
+          <button
+            id="playerThreeBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerThreeBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+
+        <!-- Level counter -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <label for="level">
+                <input
+                  type="number"
+                  id="levelP3"
+                  name="level"
+                  min="1"
+                  max="20"
+                  placeholder="level"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP3()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerThreeLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerThreeLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gear counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="weapons">
+                <input
+                  type="number"
+                  id="weaponsP3"
+                  name="weapons"
+                  min="0"
+                  max="100"
+                  placeholder="gear"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP3()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerThreeGearUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerThreeGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strength counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="strength">
+                <input
+                  type="number"
+                  id="strengthP3"
+                  name="strength"
+                  min="0"
+                  max="100"
+                  class="h-100 text-center"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStatsThree" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerThreeTotalStrength" class="pe-3 combat-text"
+              >1</span
+            >
+            <span class="combat-text">/</span>
+            <span id="playerThreeMonsterTotalStrength" class="ps-3 combat-text"
+              >1</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="playerThreeMonsterLevel">
+                      <input
+                        type="number"
+                        id="playerThreeMonsterLevel"
+                        name="playerThreeMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerThreeMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerThreeMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerThreeMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerThreeMonsterModifier"
+                        name="playerThreeMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerThreeMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerThreeMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 4 -->
+      <div id="player4" class="container-fluid mt-5 border border-light p-2">
+        <h3>PLAYER 4</h3>
+        <!-- color picker -->
+        <label for="cardColorInputP4" class="form-label">Card color</label>
+        <input
+          type="color"
+          class="form-control form-control-color p-0"
+          onchange="changeCardColor()"
+          id="cardColorInputP4"
+          value="#212529"
+          title="Choose your color"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image-p4"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p4" class="text-dark"></p>
+          <p id="img-text-p4" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs-p4">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputPlayerFour"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerFour"
+                aria-label="Race"
+                onchange="changeRaceImageP4(4)"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerFour"
+                aria-label="Class"
+                onchange="changeRaceImageP4()"
+              >
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+          >
+            <i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+          >
+            <i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <!-- Battle button -->
+        <div class="mt-3">
+          <button
+            id="playerFourBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerFourBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+        <!-- Level counter -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <label for="level">
+                <input
+                  type="number"
+                  id="levelP4"
+                  name="level"
+                  min="1"
+                  max="20"
+                  placeholder="level"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP4()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerFourLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerFourLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Gear counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="weapons">
+                <input
+                  type="number"
+                  id="weaponsP4"
+                  name="weapons"
+                  min="0"
+                  max="100"
+                  placeholder="gear"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP4()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerFourGearUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerFourGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Strength counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="strength">
+                <input
+                  type="number"
+                  id="strengthP4"
+                  name="strength"
+                  min="0"
+                  max="100"
+                  class="h-100 text-center"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStatsFour" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerFourTotalStrength" class="pe-3 combat-text">1</span>
+            <span class="combat-text">/</span>
+            <span id="playerFourMonsterTotalStrength" class="ps-3 combat-text"
+              >1</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="playerFourMonsterLevel">
+                      <input
+                        type="number"
+                        id="playerFourMonsterLevel"
+                        name="playerFourMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFourMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFourMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerFourMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerFourMonsterModifier"
+                        name="playerFourMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFourMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFourMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 5 -->
+      <div id="player5" class="container-fluid mt-5 border border-light p-2">
+        <h3>PLAYER 5</h3>
+        <!-- color picker -->
+        <label for="cardColorInputP5" class="form-label">Card color</label>
+        <input
+          type="color"
+          class="form-control form-control-color p-0"
+          onchange="changeCardColor()"
+          id="cardColorInputP5"
+          value="#212529"
+          title="Choose your color"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image-p5"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p5" class="text-dark"></p>
+          <p id="img-text-p5" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs-p5">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="playerFivefloatingInput"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerFive"
+                aria-label="Race"
+                onchange="changeRaceImageP5()"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerFive"
+                aria-label="Class"
+                onchange="changeRaceImageP5()"
+              >
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+          >
+            <i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+          >
+            <i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <div class="mt-3">
+          <button
+            id="playerFiveBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerFiveBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+
+        <!-- Level counter -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <label for="level">
+                <input
+                  type="number"
+                  id="levelP5"
+                  name="level"
+                  min="1"
+                  max="20"
+                  placeholder="level"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP5()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerFiveLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerFiveLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gear counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="weapons">
+                <input
+                  type="number"
+                  id="weaponsP5"
+                  name="weapons"
+                  min="0"
+                  max="100"
+                  placeholder="gear"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP5()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerFiveGearUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerFiveGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strength counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="strength">
+                <input
+                  type="number"
+                  id="strengthP5"
+                  name="strength"
+                  min="0"
+                  max="100"
+                  class="h-100 text-center"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStatsFive" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerFiveTotalStrength" class="pe-3 combat-text">1</span>
+            <span class="combat-text">/</span>
+            <span id="playerFiveMonsterTotalStrength" class="ps-3 combat-text"
+              >1</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="playerFiveMonsterLevel">
+                      <input
+                        type="number"
+                        id="playerFiveMonsterLevel"
+                        name="playerFiveMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFiveMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFiveMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerFiveMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerFiveMonsterModifier"
+                        name="playerFiveMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerFiveMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerFiveMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 6 -->
+      <div id="player6" class="container-fluid mt-5 border border-light p-2">
+        <h3>PLAYER 6</h3>
+        <!-- color picker -->
+        <label for="cardColorInputP6" class="form-label">Card color</label>
+        <input
+          type="color"
+          class="form-control form-control-color p-0"
+          onchange="changeCardColor()"
+          id="cardColorInputP6"
+          value="#212529"
+          title="Choose your color"
+        />
+        <div
+          class="d-flex flex-column align-items-center w-100 m-auto mt-4 mb-4 border border-2 rounded-3"
+          style="background-color: #faca99"
+        >
+          <img
+            id="hero-race-image-p6"
+            class="text-dark mix-blend-mode"
+            src=""
+            alt="hero image"
+          />
+          <p id="img-label-p6" class="text-dark"></p>
+          <p id="img-text-p6" class="text-dark"></p>
+        </div>
+        <div class="mt-3">
+          <div id="form-inputs-p6">
+            <div class="form-floating mb-3 text-dark">
+              <input
+                type="text"
+                class="form-control"
+                id="playerSixfloatingInput"
+                placeholder="Epic hero name"
+              />
+              <label for="floatingInput">Epic hero name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectRacePlayerSix"
+                aria-label="Race"
+                onchange="changeRaceImageP6()"
+              >
+                <option disabled>Choose race</option>
+                <option id="elf" value="1">Elf</option>
+                <option id="hafling" value="2">Hafling</option>
+                <option id="dwarf" value="3">Dwarf</option>
+                <option selected value="4">Human</option>
+              </select>
+              <label for="floatingSelect">Race</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="floatingSelectClassPlayerSix"
+                aria-label="Class"
+                onchange="changeRaceImageP6()"
+              >
+                <option selected value="0">Choose class</option>
+                <option id="cleric" value="1">Cleric</option>
+                <option id="thief" value="2">Thief</option>
+                <option id="warrior" value="3">Warrior</option>
+                <option id="wizard" value="4">Wizard</option>
+              </select>
+              <label for="floatingSelect">Class</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender buttons -->
+        <div
+          class="btn-group d-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(67, 67, 241)"
+            for="btnradio1"
+          >
+            <i class="fa-solid fa-venus"></i
+          ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label
+            class="btn btn-outline-dark"
+            style="background-color: rgb(254, 122, 144)"
+            for="btnradio2"
+          >
+            <i class="fa-solid fa-mars"></i
+          ></label>
+        </div>
+        <div class="mt-3">
+          <button
+            id="playerSixBattleBtn"
+            type="button"
+            class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
+            role="button"
+            style="background-color: rgb(255, 255, 255)"
+            for="playerSixBattleBtn"
+          >
+            <i class="fa-solid fa-khanda fa-2xl pt-4"></i>
+            <p class="d-inline-block fs-5 ms-2">Battle</p>
+          </button>
+        </div>
+
+        <!-- Level counter -->
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
+              ></i>
+              <label for="level">
+                <input
+                  type="number"
+                  id="levelP6"
+                  name="level"
+                  min="1"
+                  max="20"
+                  placeholder="level"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP6()"
+                />
+              </label>
+              <div>
+                <button
+                  id="playerSixLevelUp"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerSixLevelDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Gear counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="weapons">
+                <input
+                  type="number"
+                  id="weaponsP6"
+                  name="weapons"
+                  min="0"
+                  max="100"
+                  placeholder="gear"
+                  class="h-100 text-center"
+                  oninput="calculateStrengthP6()"
+                />
+              </label>
+              <div>
+                <button id="playerSixGearUp" type="button" class="btn btn-dark">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button
+                  id="playerSixGearDown"
+                  type="button"
+                  class="btn btn-dark"
+                >
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Strength counter -->
+          <div class="col-4">
+            <div
+              class="d-flex justify-content-center flex-column align-items-center pt-2"
+            >
+              <i
+                class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
+              ></i>
+              <label for="strength">
+                <input
+                  type="number"
+                  id="strengthP6"
+                  name="strength"
+                  min="0"
+                  max="100"
+                  class="h-100 text-center"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTLE SECTION -->
+      <div id="battleStatsSix" class="d-block d-none">
+        <div>
+          <div class="d-flex justify-content-center mt-5 mb-5 p-4">
+            <span id="playerSixTotalStrength" class="pe-3 combat-text">1</span>
+            <span class="combat-text">/</span>
+            <span id="playerSixMonsterTotalStrength" class="ps-3 combat-text"
+              >1</span
+            >
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="d-flex justify-content-center mb-2">
+            <h3 id="monsterName">Monster 1</h3>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>LEVEL</h3>
+                  <div>
+                    <label for="playerSixMonsterLevel">
+                      <input
+                        type="number"
+                        id="playerSixMonsterLevel"
+                        name="playerSixMonsterLevel"
+                        min="1"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerSixMonsterLevelUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerSixMonsterLevelDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="border-bottom d-flex justify-content-center flex-column align-items-center"
+                >
+                  <h3>MODIFIER</h3>
+                  <div>
+                    <label for="playerSixMonsterModifier">
+                      <input
+                        type="number"
+                        id="playerSixMonsterModifier"
+                        name="playerSixMonsterModifier"
+                        min="0"
+                        max="100"
+                        class="h-100 text-center"
+                      />
+                    </label>
+                  </div>
+
+                  <div>
+                    <button
+                      id="playerSixMonsterModifierUp"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <button
+                      id="playerSixMonsterModifierDown"
+                      type="button"
+                      class="btn btn-dark"
+                    >
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-center mt-5">
+      <div>
+        <p>
+          &copy; 2023 Pablo Garza - All Rights Reserved by official Muchkins
+          Game Creators
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
