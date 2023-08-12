@@ -1159,7 +1159,7 @@ playerGearDownButton.addEventListener("click", decreaseLevel);
 
 function increaseLevel() {
   let levelInput = document.getElementById("weapons");
-  let currentLevel = parseInt(levelInput.value) || 1;
+  let currentLevel = parseInt(levelInput.value) || 0;
   let maxLevel = parseInt(levelInput.getAttribute("max")) || 20;
 
   // Increment the current level
@@ -1174,8 +1174,8 @@ function increaseLevel() {
 
 function decreaseLevel() {
   let levelInput = document.getElementById("weapons");
-  let currentLevel = parseInt(levelInput.value) || 1;
-  let minLevel = parseInt(levelInput.getAttribute("min")) || 1;
+  let currentLevel = parseInt(levelInput.value) || 0;
+  let minLevel = parseInt(levelInput.getAttribute("min")) || 0;
 
   // Decrement the current level
   currentLevel = Math.max(currentLevel - 1, minLevel);
