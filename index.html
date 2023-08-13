@@ -100,7 +100,6 @@
         class="modal fade"
         id="exampleModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog">
@@ -159,7 +158,7 @@
                 id="floatingInputPlayerOne"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Your epic hero name</label>
+              <label for="floatingInputPlayerOne">Your epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -169,12 +168,12 @@
                 onchange="changeRaceImage()"
               >
                 <option disabled>Choose race</option>
-                <option id="elf" value="1">Elf</option>
-                <option id="hafling" value="2">Hafling</option>
-                <option id="dwarf" value="3">Dwarf</option>
-                <option selected id="human" value="4">Human</option>
+                <option value="1">Elf</option>
+                <option value="2">Hafling</option>
+                <option value="3">Dwarf</option>
+                <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerOne">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -189,7 +188,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerOne">Class</label>
             </div>
           </div>
         </div>
@@ -367,7 +366,7 @@
         </div>
         <div class="mt-5">
           <div class="d-flex justify-content-center mb-2">
-            <h3 id="monsterName">Monster 1</h3>
+            <h3>Monster 1</h3>
           </div>
           <div>
             <div class="row">
@@ -492,7 +491,7 @@
                 id="floatingInputPlayerTwo"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Epic hero name</label>
+              <label for="floatingInputPlayerTwo">Epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -507,7 +506,7 @@
                 <option value="3">Dwarf</option>
                 <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerTwo">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -522,7 +521,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerTwo">Class</label>
             </div>
           </div>
         </div>
@@ -822,7 +821,7 @@
                 id="floatingInputPlayerThree"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Epic hero name</label>
+              <label for="floatingInputPlayerThree">Epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -832,12 +831,12 @@
                 onchange="changeRaceImageP3(3)"
               >
                 <option disabled>Choose race</option>
-                <option id="elf" value="1">Elf</option>
-                <option id="hafling" value="2">Hafling</option>
-                <option id="dwarf" value="3">Dwarf</option>
+                <option value="1">Elf</option>
+                <option value="2">Hafling</option>
+                <option value="3">Dwarf</option>
                 <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerThree">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -852,7 +851,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerThree">Class</label>
             </div>
           </div>
         </div>
@@ -899,7 +898,6 @@
             class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
             role="button"
             style="background-color: rgb(255, 255, 255)"
-            for="playerThreeBattleBtn"
           >
             <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
@@ -914,7 +912,7 @@
               <i
                 class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
               ></i>
-              <label for="level">
+              <label for="levelP3">
                 <input
                   type="number"
                   id="levelP3"
@@ -996,7 +994,7 @@
               <i
                 class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
               ></i>
-              <label for="strength">
+              <label for="strengthP3">
                 <input
                   type="number"
                   id="strengthP3"
@@ -1027,7 +1025,7 @@
         </div>
         <div class="mt-5">
           <div class="d-flex justify-content-center mb-2">
-            <h3 id="monsterName">Monster 1</h3>
+            <h3>Monster 1</h3>
           </div>
           <div>
             <div class="row">
@@ -1152,7 +1150,7 @@
                 id="floatingInputPlayerFour"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Epic hero name</label>
+              <label for="floatingInputPlayerFour">Epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -1162,12 +1160,12 @@
                 onchange="changeRaceImageP4(4)"
               >
                 <option disabled>Choose race</option>
-                <option id="elf" value="1">Elf</option>
-                <option id="hafling" value="2">Hafling</option>
-                <option id="dwarf" value="3">Dwarf</option>
+                <option value="1">Elf</option>
+                <option value="2">Hafling</option>
+                <option value="3">Dwarf</option>
                 <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerFour">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -1182,7 +1180,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerFour">Class</label>
             </div>
           </div>
         </div>
@@ -1229,7 +1227,6 @@
             class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
             role="button"
             style="background-color: rgb(255, 255, 255)"
-            for="playerFourBattleBtn"
           >
             <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
@@ -1243,7 +1240,7 @@
               <i
                 class="fa-solid fa-arrow-up-right-dots fa-2xl icon-display-none mt-4 mb-4"
               ></i>
-              <label for="level">
+              <label for="levelP4">
                 <input
                   type="number"
                   id="levelP4"
@@ -1283,7 +1280,7 @@
               <i
                 class="fa-solid fa-shield-halved fa-2xl icon-display-none mb-4 mt-4"
               ></i>
-              <label for="weapons">
+              <label for="weaponsP4">
                 <input
                   type="number"
                   id="weaponsP4"
@@ -1323,7 +1320,7 @@
               <i
                 class="fa-solid fa-hand-fist fa-2xl icon-display-none mb-4 mt-4"
               ></i>
-              <label for="strength">
+              <label for="strengthP4">
                 <input
                   type="number"
                   id="strengthP4"
@@ -1352,7 +1349,7 @@
         </div>
         <div class="mt-5">
           <div class="d-flex justify-content-center mb-2">
-            <h3 id="monsterName">Monster 1</h3>
+            <h3>Monster 1</h3>
           </div>
           <div>
             <div class="row">
@@ -1477,7 +1474,7 @@
                 id="playerFivefloatingInput"
                 placeholder="Epic hero name"
               />
-              <label for="floatingInput">Epic hero name</label>
+              <label for="playerFivefloatingInput">Epic hero name</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -1487,12 +1484,12 @@
                 onchange="changeRaceImageP5()"
               >
                 <option disabled>Choose race</option>
-                <option id="elf" value="1">Elf</option>
-                <option id="hafling" value="2">Hafling</option>
-                <option id="dwarf" value="3">Dwarf</option>
+                <option value="1">Elf</option>
+                <option value="2">Hafling</option>
+                <option value="3">Dwarf</option>
                 <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerFive">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -1507,7 +1504,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerFive">Class</label>
             </div>
           </div>
         </div>
@@ -1553,7 +1550,6 @@
             class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
             role="button"
             style="background-color: rgb(255, 255, 255)"
-            for="playerFiveBattleBtn"
           >
             <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
@@ -1679,7 +1675,7 @@
         </div>
         <div class="mt-5">
           <div class="d-flex justify-content-center mb-2">
-            <h3 id="monsterName">Monster 1</h3>
+            <h3>Monster 1</h3>
           </div>
           <div>
             <div class="row">
@@ -1814,12 +1810,12 @@
                 onchange="changeRaceImageP6()"
               >
                 <option disabled>Choose race</option>
-                <option id="elf" value="1">Elf</option>
-                <option id="hafling" value="2">Hafling</option>
-                <option id="dwarf" value="3">Dwarf</option>
+                <option value="1">Elf</option>
+                <option value="2">Hafling</option>
+                <option value="3">Dwarf</option>
                 <option selected value="4">Human</option>
               </select>
-              <label for="floatingSelect">Race</label>
+              <label for="floatingSelectRacePlayerSix">Race</label>
             </div>
             <div class="form-floating mb-3">
               <select
@@ -1834,7 +1830,7 @@
                 <option value="3">Warrior</option>
                 <option value="4">Wizard</option>
               </select>
-              <label for="floatingSelect">Class</label>
+              <label for="floatingSelectClassPlayerSix">Class</label>
             </div>
           </div>
         </div>
@@ -1880,7 +1876,6 @@
             class="btn btn-outline-dark d-inline-block w-100 mt-3 text-bg-light"
             role="button"
             style="background-color: rgb(255, 255, 255)"
-            for="playerSixBattleBtn"
           >
             <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
@@ -2000,7 +1995,7 @@
         </div>
         <div class="mt-5">
           <div class="d-flex justify-content-center mb-2">
-            <h3 id="monsterName">Monster 1</h3>
+            <h3>Monster 1</h3>
           </div>
           <div>
             <div class="row">
