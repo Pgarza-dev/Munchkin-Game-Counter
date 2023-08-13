@@ -200,24 +200,18 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerOne"
-          />
           <label
             class="btn"
             for="femalePlayerOne"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerOne"
+            id="femalePlayerOne"
+            placeholder="Female"
           />
           <label
             class="btn"
@@ -225,6 +219,13 @@
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerOne"
+            placeholder="Male"
+          />
         </div>
         <div class="mt-3">
           <!-- Battle button -->
@@ -326,6 +327,7 @@
                     min="0"
                     max="100"
                     class="h-100 text-center fs-1"
+                    placeholder="Strength"
                   />
                 </label>
               </div>
@@ -383,6 +385,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -421,6 +424,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -430,14 +434,16 @@
                       id="monsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="monsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
@@ -527,31 +533,33 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerTwo"
-          />
           <label
             class="btn"
             for="femalePlayerTwo"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerTwo"
+            id="femalePlayerTwo"
+            placeholder="Female"
           />
+
           <label
             class="btn"
             for="malePlayerTwo"
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerTwo"
+            placeholder="Male"
+          />
         </div>
         <!-- Battle button -->
         <div class="mt-3">
@@ -562,7 +570,7 @@
             role="button"
             style="background-color: rgb(255, 255, 255)"
           >
-          <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
+            <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
         </div>
 
@@ -665,6 +673,7 @@
                     min="0"
                     max="100"
                     class="h-100 text-center fs-1"
+                    placeholder="Strength"
                   />
                 </label>
               </div>
@@ -706,6 +715,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -744,6 +754,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -753,14 +764,16 @@
                       id="playerTwoMonsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="playerTwoMonsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
@@ -850,24 +863,18 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerThree"
-          />
           <label
             class="btn"
             for="femalePlayerThree"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerThree"
+            id="femalePlayerThree"
+            placeholder="Female"
           />
           <label
             class="btn"
@@ -875,6 +882,14 @@
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerThree"
+            placeholder="Male"
+          />
         </div>
         <!-- Battle button -->
         <div class="mt-3">
@@ -886,7 +901,7 @@
             style="background-color: rgb(255, 255, 255)"
             for="playerThreeBattleBtn"
           >
-          <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
+            <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
         </div>
 
@@ -989,6 +1004,7 @@
                   min="0"
                   max="100"
                   class="h-100 text-center fs-1"
+                  placeholder="Strength"
                 />
               </label>
             </div>
@@ -1029,6 +1045,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -1067,6 +1084,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -1076,14 +1094,16 @@
                       id="playerThreeMonsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="playerThreeMonsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
@@ -1173,31 +1193,33 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerFour"
-          />
           <label
             class="btn"
             for="femalePlayerFour"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerFour"
+            id="femalePlayerFour"
+            placeholder="Female"
           />
+
           <label
             class="btn"
             for="malePlayerFour"
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerFour"
+            placeholder="Male"
+          />
         </div>
         <!-- Battle button -->
         <div class="mt-3">
@@ -1209,7 +1231,7 @@
             style="background-color: rgb(255, 255, 255)"
             for="playerFourBattleBtn"
           >
-          <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
+            <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
         </div>
         <!-- Level counter -->
@@ -1238,14 +1260,16 @@
                   id="playerFourLevelUp"
                   type="button"
                   class="btn btn-dark"
-                ><p class="visually-hidden">UP</p>
+                >
+                  <p class="visually-hidden">UP</p>
                   <i class="fa-solid fa-chevron-up"></i>
                 </button>
                 <button
                   id="playerFourLevelDown"
                   type="button"
                   class="btn btn-dark"
-                ><p class="visually-hidden">DOWN</p>
+                >
+                  <p class="visually-hidden">DOWN</p>
                   <i class="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
@@ -1307,6 +1331,7 @@
                   min="0"
                   max="100"
                   class="h-100 text-center fs-1"
+                  placeholder="Strength"
                 />
               </label>
             </div>
@@ -1345,6 +1370,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -1383,6 +1409,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -1392,14 +1419,16 @@
                       id="playerFourMonsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="playerFourMonsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
@@ -1489,31 +1518,33 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerFive"
-          />
           <label
             class="btn"
             for="femalePlayerFive"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerFive"
+            id="femalePlayerFive"
+            placeholder="Female"
           />
+
           <label
             class="btn"
             for="malePlayerFive"
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerFive"
+            placeholder="Male"
+          />
         </div>
         <div class="mt-3">
           <button
@@ -1524,7 +1555,7 @@
             style="background-color: rgb(255, 255, 255)"
             for="playerFiveBattleBtn"
           >
-          <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
+            <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
         </div>
 
@@ -1627,6 +1658,7 @@
                   min="0"
                   max="100"
                   class="h-100 text-center fs-1"
+                  placeholder="Strength"
                 />
               </label>
             </div>
@@ -1665,6 +1697,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -1703,6 +1736,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -1712,14 +1746,16 @@
                       id="playerFiveMonsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="playerFiveMonsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
@@ -1808,25 +1844,18 @@
           class="btn-group"
           role="group"
           aria-label="Basic radio toggle button group"
-        >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio"
-            id="femalePlayerSix"
-          />
-          <label
+        ><label
             class="btn"
             for="femalePlayerSix"
             style="background-color: rgb(254, 122, 144)"
             ><i class="fa-solid fa-venus"></i
           ></label>
-
           <input
             type="radio"
             class="btn-check"
             name="btnradio"
-            id="malePlayerSix"
+            id="femalePlayerSix"
+            placeholder="Female"
           />
           <label
             class="btn"
@@ -1834,6 +1863,15 @@
             style="background-color: rgb(67, 67, 241)"
             ><i class="fa-solid fa-mars"></i
           ></label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="malePlayerSix"
+            placeholder="Male"
+          />
+          
         </div>
         <div class="mt-3">
           <button
@@ -1844,7 +1882,7 @@
             style="background-color: rgb(255, 255, 255)"
             for="playerSixBattleBtn"
           >
-          <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
+            <i class="fa-solid fa-khanda fa-2xl p-3"></i>Battle
           </button>
         </div>
 
@@ -1941,6 +1979,7 @@
                   min="0"
                   max="100"
                   class="h-100 text-center fs-1"
+                  placeholder="Strength"
                 />
               </label>
             </div>
@@ -1979,6 +2018,7 @@
                         min="1"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="1"
                       />
                     </label>
                   </div>
@@ -2017,6 +2057,7 @@
                         min="0"
                         max="100"
                         class="h-100 text-center"
+                        placeholder="0"
                       />
                     </label>
                   </div>
@@ -2026,14 +2067,16 @@
                       id="playerSixMonsterModifierUp"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">UP</p>
+                    >
+                      <p class="visually-hidden">UP</p>
                       <i class="fa-solid fa-chevron-up"></i>
                     </button>
                     <button
                       id="playerSixMonsterModifierDown"
                       type="button"
                       class="btn btn-dark"
-                    ><p class="visually-hidden">DOWN</p>
+                    >
+                      <p class="visually-hidden">DOWN</p>
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
