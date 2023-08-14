@@ -6,7 +6,14 @@
   border-radius: 10px;
   background-color: #212529;
 }
-
+body {
+  background-color: #212529;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
 img {
   height: 200px;
   width: 200px;
@@ -15,6 +22,18 @@ img {
   mix-blend-mode: multiply;
 }
 
+.bg-card-color {
+  background-color: #faca99;
+}
+.female-btn-color {
+  background-color: rgb(254, 122, 144);
+}
+.male-btn-color {
+  background-color: rgb(67, 67, 241);
+}
+.battle-btn-color {
+  background-color: rgb(255, 255, 255);
+}
 .dice {
   width: 70px;
   height: 70px;
